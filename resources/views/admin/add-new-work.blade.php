@@ -1,8 +1,8 @@
 <link rel="stylesheet" href="{{asset('css/pages/admin/add-new-work.css')}}">
 <x-admin-dashboard dashTitle='Add new work'>
-    <form action="">
+    <form method="POST" action="{{route('AdminWorksController')}}" enctype="multipart/form-data">
         <div data-mdb-input-init class="form-outline mb-4">
-            <input type="email" id="form1Example1" class="form-control" />
+            <input type="email" name="brand_name" id="form1Example1" class="form-control" />
             <label class="form-label" for="form1Example1">Brand name</label>
         </div>
         <div class="mb-4">

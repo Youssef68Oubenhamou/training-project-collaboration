@@ -32,9 +32,7 @@ Route::group(['prefix' => 'about-us'], function () {
     })->name('4_aboutLink');
 });
 
-Route::get('/dashboard', function () {
-    return view('admin/dash');
-})->name('dashboard');
+Route::get('/dashboard', [\App\Http\Controllers\AdminWorksController::class , "index"])->name('dashboard');
 
 Route::get('/dashboard/add-new-work', function () {
     return view('admin/add-new-work');
