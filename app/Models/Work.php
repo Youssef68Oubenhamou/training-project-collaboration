@@ -13,8 +13,14 @@ class Work extends Model
 
         "brand_name" ,
         "path" ,
-        "categorie"
+        "categorie_id"
 
     ] ;
+
+    public function categorie() {
+
+        return $this->belongsTo(\App\Models\Categorie::class) ;
+
+    }
 
 }

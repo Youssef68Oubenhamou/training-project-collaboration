@@ -32,8 +32,12 @@ Route::group(['prefix' => 'about-us'], function () {
     })->name('4_aboutLink');
 });
 
-Route::get('/dashboard', [\App\Http\Controllers\AdminWorksController::class , "index"])->name('dashboard');
+Route::resource('/admin/works', "\App\Http\Controllers\AdminWorksController") ;
 
-Route::get('/dashboard/add-new-work', function () {
-    return view('admin/add-new-work');
-})->name('addNewWork');
+// Route::get('/dashboard/add-new-work', function () {
+
+//     $categories = \App\Models\Categorie::all() ;
+
+//     return view('admin/add-new-work' , compact("categories"));
+
+// })->name('addNewWork');

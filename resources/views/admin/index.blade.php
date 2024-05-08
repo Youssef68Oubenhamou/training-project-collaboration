@@ -21,6 +21,30 @@
       </div>
       <!-- row -->
       <div class="row grid">
+         @foreach($works as $work)
+         <div class="col-lg-4 col-sm-6" data-filter="branding">
+            <div class="portfolio-style-one text-center">
+               <div class="portfolio-image">
+                  <img
+                     src="/uploads/{{$work->path}}"
+                     alt="image"
+                     />
+               </div>
+               <div class="portfolio-overlay">
+                  <div class="portfolio-content">
+                        <h4 class="text-center text-white">
+                           Graphics Design
+                        </h4>
+                     <div class="actions d-flex gap-3">
+                        <button class="btn btn-success">edit</button>
+                        <button class="btn btn-danger">Delete</button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- single portfolio -->
+         </div>
+         @endforeach
          <div class="col-lg-4 col-sm-6" data-filter="branding">
             <div class="portfolio-style-one text-center">
                <div class="portfolio-image">

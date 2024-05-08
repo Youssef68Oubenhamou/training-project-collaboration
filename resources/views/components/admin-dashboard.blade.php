@@ -53,7 +53,7 @@
 
               <!-- Nav Item - Dashboard -->
               <li class="nav-item active">
-                  <a class="nav-link" href="{{asset('dashboard')}}">
+                  <a class="nav-link" href="/admin/works">
                       <i class="fas fa-fw fa-tachometer-alt"></i>
                       <span>Dashboard</span></a>
               </li>
@@ -68,7 +68,7 @@
 
               <!-- Nav Item - Pages Collapse Menu -->
               <li class="nav-item">
-                  <a class="nav-link collapsed" href="{{route('addNewWork')}}" data-toggle="collapse" data-target="#collapseTwo"
+                  <a class="nav-link collapsed" href="/admin/works/create" data-toggle="collapse" data-target="#collapseTwo"
                       aria-expanded="true" aria-controls="collapseTwo">
                       <i class="fa-regular fa-square-plus"></i>
                       <span>Add new work</span>

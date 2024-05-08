@@ -25,7 +25,7 @@ class AdminWorksRequest extends FormRequest
             
             "brand_name" => "required" ,
             "path" => "required" ,
-            "categorie" => "required"
+            "categorie_id" => "required"
 
         ];
     }
