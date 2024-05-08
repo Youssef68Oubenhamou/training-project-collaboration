@@ -36,7 +36,7 @@
                            Graphics Design
                         </h4>
                      <div class="actions d-flex gap-3">
-                        <button class="btn btn-success">edit</button>
+                        <button class="btn btn-success"><a href="{{ route('works.edit' , $work->id) }}" >edit</a></button>
                         <button class="btn btn-danger">Delete</button>
                      </div>
                   </div>

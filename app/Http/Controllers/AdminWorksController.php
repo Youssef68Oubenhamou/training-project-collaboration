@@ -47,6 +47,8 @@ class AdminWorksController extends Controller
             "brand_name" => $request->brand_name
         ]) ;
 
+        return redirect("/admin/works") ;
+
     }
 
     /**
@@ -62,7 +64,13 @@ class AdminWorksController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        
+        $work = \App\Models\Work::findOrFail($id) ;
+
+        $categories = \App\Models\Categorie::all() ;
+
+        return view("admin.edit" , compact("work" , "categories")) ;
+
     }
 
     /**
@@ -70,7 +78,9 @@ class AdminWorksController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        
+
+
     }
 
     /**
