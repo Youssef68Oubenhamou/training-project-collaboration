@@ -76,10 +76,32 @@ class AdminWorksController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(\App\Http\Requests\AdminWorksRequest $request, string $id)
     {
         
+        $work = \App\Models\Work::findOrFail($id) ;
 
+        $therequest = $request->all() ;
+
+        if ($request->brand_name || $file = $request->file("path") || $request->categorie_id) {
+
+            $name = time() . $request->file("path")->getClientOriginalName() ;
+
+            $request->file("path")->move("uploads" , $name) ;
+
+            $therequest["path"] = $name ;
+            
+            $work->update([
+                "brand_name" => $request->brand_name ,
+                "path" => $name ,
+                "categorie_id" => $request->categorie_id
+            ]) ;
+
+            // $work->save() ;
+
+        }
+
+        return redirect("/admin/works") ;
 
     }
 

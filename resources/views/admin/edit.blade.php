@@ -1,9 +1,12 @@
 <link rel="stylesheet" href="{{asset('css/pages/admin/add-new-work.css')}}">
 <x-admin-dashboard dashTitle='Edit Design'>
-    <form method="POST" action="{{route('works.update' , $work->id)}}" enctype="multipart/form-data">
+    <form method="POST" action="{{ route('works.update' , $work->id) }}" enctype="multipart/form-data">
+
+        @method('POST')
 
         @csrf
 
+        <input type="hidden" name="_method" value="PATCH" />
         <div data-mdb-input-init class="form-outline mb-4">
             <input type="email" name="brand_name" id="form1Example1" class="form-control" />
             <label class="form-label" for="form1Example1">Brand name</label>

@@ -33,7 +33,7 @@
                <div class="portfolio-overlay">
                   <div class="portfolio-content">
                         <h4 class="text-center text-white">
-                           Graphics Design
+                           {{ $work->brand_name }}
                         </h4>
                      <div class="actions d-flex gap-3">
                         <button class="btn btn-success"><a href="{{ route('works.edit' , $work->id) }}" >edit</a></button>
