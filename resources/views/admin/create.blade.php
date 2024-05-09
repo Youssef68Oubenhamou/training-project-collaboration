@@ -9,12 +9,12 @@
             <label class="form-label" for="form1Example1">Brand name</label>
         </div>
         <div data-mdb-input-init class="form-outline mb-4">
-            <input type="email" name="brand_name" id="form1Example1" class="form-control" />
+            <input type="email" name="brand_description" id="form1Example1" class="form-control" />
             <label class="form-label" for="form1Example1">Brand Sescription</label>
         </div>
         <div class="mb-4">
             <label for="formFileMultiple" class="form-label">Work image</label>
-            <input class="form-control" name="path" type="file" id="formFileMultiple" multiple />
+            <input class="form-control" name="img" type="file" id="formFileMultiple" multiple />
         </div>
         <div class="mb-4">
             <select class="form-select" name="categorie_id" aria-label="Default select example" >
