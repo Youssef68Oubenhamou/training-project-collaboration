@@ -5,11 +5,11 @@
         @csrf
 
         <div data-mdb-input-init class="form-outline mb-4">
-            <input type="email" name="brand_name" id="form1Example1" class="form-control" />
+            <input type="text" name="brand_name" id="form1Example1" class="form-control" />
             <label class="form-label" for="form1Example1">Brand name</label>
         </div>
         <div data-mdb-input-init class="form-outline mb-4">
-            <input type="email" name="brand_description" id="form1Example1" class="form-control" />
+            <input type="text" name="brand_description" id="form1Example1" class="form-control" />
             <label class="form-label" for="form1Example1">Brand Sescription</label>
         </div>
         <div class="mb-4">
@@ -22,7 +22,7 @@
             @foreach($categories as $categorie)
 
                 <option value="{{$categorie->id}}">{{$categorie->categorie_name}}</option>
-            
+
             @endforeach
             </select>
         </div>
