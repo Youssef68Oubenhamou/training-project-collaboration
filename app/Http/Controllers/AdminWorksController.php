@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\AdminWorksRequest;
+use Illuminate\Http\Request;
 use App\Models\Categorie;
 use App\Models\Work;
 
@@ -33,12 +33,18 @@ class AdminWorksController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(AdminWorksRequest $request)
+    public function store(Request $request)
     {
+        $request->validate([
+            "categorie_id" => "required",
+            "img" => ["required", 'image'],
+            "brand_name" => "required",
+            "brand_description" => "required"
+        ]);
 
         $file = $request->file("img");
 
-        $design_name = time() . $file->getClientOriginalName();
+        $design_name = time() . '.' . $file->getClientOriginalName();
 
         $file->move("uploads", $design_name);
 
@@ -48,7 +54,6 @@ class AdminWorksController extends Controller
             "brand_name" => $request->brand_name,
             "brand_description" => $request->brand_description
         ]);
-
         return redirect("/admin/works");
     }
 
@@ -76,8 +81,14 @@ class AdminWorksController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(AdminWorksRequest $request, string $id)
+    public function update(Request $request, string $id)
     {
+        $request->validate([
+            "categorie_id" => "required",
+            "img" => ["required", 'image'],
+            "brand_name" => "required",
+            "brand_description" => "required"
+        ]);
 
         $work = Work::findOrFail($id);
 
