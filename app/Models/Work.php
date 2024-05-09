@@ -10,17 +10,15 @@ class Work extends Model
     use HasFactory;
 
     protected $fillable = [
+        "categorie_id",
+        "img",
+        "brand_name",
+        "brand_description"
+    ];
 
-        "brand_name" ,
-        "path" ,
-        "categorie_id"
+    public function categorie()
+    {
 
-    ] ;
-
-    public function categorie() {
-
-        return $this->belongsTo(\App\Models\Categorie::class) ;
-
+        return $this->belongsTo(\App\Models\Categorie::class);
     }
-
 }

@@ -10,10 +10,9 @@ class Categorie extends Model
 
     use HasFactory;
 
-    public function works() {
+    public function works()
+    {
 
-        return $this->hasMany(\App\Models\Work::class) ;
-
+        return $this->hasMany(\App\Models\Work::class);
     }
-
 }

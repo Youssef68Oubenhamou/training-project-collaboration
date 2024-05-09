@@ -2,19 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\AdminWorksRequest;
+use App\Models\Categorie;
+use App\Models\Work;
 
 class AdminWorksController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index() {
+    public function index()
+    {
 
-        $works = \App\Models\Work::all() ;
-        
-        return view("admin.index" , compact("works")) ;
+        $works = Work::all();
 
+        return view("admin.index", compact("works"));
     }
 
     /**
@@ -22,33 +24,32 @@ class AdminWorksController extends Controller
      */
     public function create()
     {
-        
-        $categories = \App\Models\Categorie::all() ;
 
-        return view("admin.create" , compact("categories")) ;
+        $categories = Categorie::all();
 
+        return view("admin.create", compact("categories"));
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(\App\Http\Requests\AdminWorksRequest $request)
+    public function store(AdminWorksRequest $request)
     {
 
-        $file = $request->file("path") ;
-        
-        $design_name = time() . $file->getClientOriginalName() ;
+        $file = $request->file("img");
 
-        $file->move("uploads" , $design_name) ;
+        $design_name = time() . $file->getClientOriginalName();
 
-        \App\Models\Work::create([
-            "categorie_id" => $request->categorie_id ,
-            "path" => $design_name ,
-            "brand_name" => $request->brand_name
-        ]) ;
+        $file->move("uploads", $design_name);
 
-        return redirect("/admin/works") ;
+        Work::create([
+            "categorie_id" => $request->categorie_id,
+            "img" => $design_name,
+            "brand_name" => $request->brand_name,
+            "brand_description" => $request->brand_description
+        ]);
 
+        return redirect("/admin/works");
     }
 
     /**
@@ -64,45 +65,44 @@ class AdminWorksController extends Controller
      */
     public function edit(string $id)
     {
-        
-        $work = \App\Models\Work::findOrFail($id) ;
 
-        $categories = \App\Models\Categorie::all() ;
+        $work = Work::findOrFail($id);
 
-        return view("admin.edit" , compact("work" , "categories")) ;
+        $categories = Categorie::all();
 
+        return view("admin.edit", compact("work", "categories"));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(\App\Http\Requests\AdminWorksRequest $request, string $id)
+    public function update(AdminWorksRequest $request, string $id)
     {
-        
-        $work = \App\Models\Work::findOrFail($id) ;
 
-        $therequest = $request->all() ;
+        $work = Work::findOrFail($id);
 
-        if ($request->brand_name || $file = $request->file("path") || $request->categorie_id) {
+        $therequest = $request->all();
 
-            $name = time() . $request->file("path")->getClientOriginalName() ;
+        if ($request->brand_name || $file = $request->file("img") || $request->categorie_id) {
 
-            $request->file("path")->move("uploads" , $name) ;
+            $name = time() . $request->file("img")->getClientOriginalName();
 
-            $therequest["path"] = $name ;
-            
+            $request->file("img")->move("uploads", $name);
+
+            $therequest["img"] = $name;
+
             $work->update([
-                "brand_name" => $request->brand_name ,
-                "path" => $name ,
-                "categorie_id" => $request->categorie_id
-            ]) ;
+                "categorie_id" => $request->categorie_id,
+                "img" => $name,
+                "brand_name" => $request->brand_name,
+                "brand_description" => $request->brand_description,
+            ]);
 
             // $work->save() ;
 
         }
 
-        return redirect("/admin/works") ;
-
+        return redirect("/admin/works");
     }
 
     /**
