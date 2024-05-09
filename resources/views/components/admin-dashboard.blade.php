@@ -43,51 +43,135 @@
           <!-- Sidebar -->
           <ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar">
 
-              <!-- Sidebar - Brand -->
-              <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{asset('dashboard')}}">
-                <img class="admin-brand" src="{{asset('imgs/logoPng.png')}}">
-              </a>
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center py-5" href="#">
+              <h4 class="text-title">Admin<br><small>dashboard</small></h4>
+            </a>
 
-              <!-- Divider -->
-              <hr class="sidebar-divider my-0">
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
 
-              <!-- Nav Item - Dashboard -->
-              <li class="nav-item active">
-                  <a class="nav-link" href="/admin/works">
-                      <i class="fas fa-fw fa-tachometer-alt"></i>
-                      <span>Dashboard</span></a>
-              </li>
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item active">
+                <a class="nav-link" href="#">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span></a>
+            </li>
 
-              <!-- Divider -->
-              <hr class="sidebar-divider">
+            <!-- Divider -->
+            <hr class="sidebar-divider">
 
-              <!-- Heading -->
-              <div class="sidebar-heading">
-                  Interface
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Interface
+            </div>
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item" style="cursor:pointer !important;">
+              <div class="dropdown">
+                <div class="nav-link collapsed"
+                  data-toggle="collapse" data-target="#collapseTwo"
+                  aria-expanded="true" aria-controls="collapseTwo"
+                  id="dropdownMenuButton"
+                  data-mdb-dropdown-init
+                  data-mdb-ripple-init
+                  aria-expanded="false"
+                >
+                <i class="fas fa-solid fa-list"></i>
+                <span>Categories</span>
+                </div>
+                <ul class="dropdown-menu ml-4" aria-labelledby="dropdownMenuButton">
+                  <li><a class="dropdown-item" href="#">Add new Category</a></li>
+                  <li><a class="dropdown-item" href="#">Update Category</a></li>
+                </ul>
               </div>
+          </li>
 
-              <!-- Nav Item - Pages Collapse Menu -->
-              <li class="nav-item">
-                  <a class="nav-link collapsed" href="/admin/works/create" data-toggle="collapse" data-target="#collapseTwo"
-                      aria-expanded="true" aria-controls="collapseTwo">
-                      <i class="fa-regular fa-square-plus"></i>
-                      <span>Add new work</span>
-                  </a>
-              </li>
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item" style="cursor:pointer !important;">
+                <div class="dropdown">
+                  <div class="nav-link collapsed"
+                    data-toggle="collapse" data-target="#collapseTwo"
+                    aria-expanded="true" aria-controls="collapseTwo"
+                    id="dropdownMenuButton"
+                    data-mdb-dropdown-init
+                    data-mdb-ripple-init
+                    aria-expanded="false"
+                  >
+                    <i class="fa-solid fa-users"></i>
+                    <span>Portfolio</span>
+                  </div>
+                  <ul class="dropdown-menu ml-4" aria-labelledby="dropdownMenuButton">
+                    <li><a class="dropdown-item" href="#">Add new work</a></li>
+                    <li><a class="dropdown-item" href="#">Update work</a></li>
+                  </ul>
+                </div>
+            </li>
 
-              <!-- Nav Item - Utilities Collapse Menu -->
-              <li class="nav-item">
-                  <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-                      aria-expanded="true" aria-controls="collapseUtilities">
-                      <i class="fas fa-fw fa-wrench"></i>
-                      <span>Utilities</span>
-                  </a>
-              </li>
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item" style="cursor:pointer !important;">
+              <div class="dropdown">
+                <div class="nav-link collapsed"
+                  data-toggle="collapse" data-target="#collapseTwo"
+                  aria-expanded="true" aria-controls="collapseTwo"
+                  id="dropdownMenuButton"
+                  data-mdb-dropdown-init
+                  data-mdb-ripple-init
+                  aria-expanded="false"
+                >
+                <i class="fas fa-solid fa-list"></i>
+                <span>Our awsome clients</span>
+                </div>
+                <ul class="dropdown-menu ml-4" aria-labelledby="dropdownMenuButton">
+                  <li><a class="dropdown-item" href="#">Add new client</a></li>
+                  <li><a class="dropdown-item" href="#">Update client</a></li>
+                </ul>
+              </div>
+          </li>
+          
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item" style="cursor:pointer !important;">
+              <div class="dropdown">
+                <div class="nav-link collapsed"
+                  data-toggle="collapse" data-target="#collapseTwo"
+                  aria-expanded="true" aria-controls="collapseTwo"
+                  id="dropdownMenuButton"
+                  data-mdb-dropdown-init
+                  data-mdb-ripple-init
+                  aria-expanded="false"
+                >
+                <i class="fas fa-solid fa-list"></i>
+                <span>About us</span>
+                </div>
+                <ul class="dropdown-menu ml-4" aria-labelledby="dropdownMenuButton">
+                  <li><a class="dropdown-item" href="#">Our expertise</a></li>
+                </ul>
+              </div>
+          </li>
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item" style="cursor:pointer !important;">
+              <div class="dropdown">
+                <div class="nav-link collapsed"
+                  data-toggle="collapse" data-target="#collapseTwo"
+                  aria-expanded="true" aria-controls="collapseTwo"
+                  id="dropdownMenuButton"
+                  data-mdb-dropdown-init
+                  data-mdb-ripple-init
+                  aria-expanded="false"
+                >
+                <i class="fas fa-solid fa-list"></i>
+                <span>Contact</span>
+                </div>
+                <ul class="dropdown-menu ml-4" aria-labelledby="dropdownMenuButton">
+                  <li><a class="dropdown-item" href="#">Update informations</a></li>
+                </ul>
+              </div>
+          </li>
 
-              <!-- Divider -->
-              <hr class="sidebar-divider">
-          </ul>
-          <!-- End of Sidebar -->
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+        </ul>
+        <!-- End of Sidebar -->
 
           <!-- Content Wrapper -->
           <div id="content-wrapper" class="d-flex flex-column">
@@ -165,16 +249,6 @@
                   </div>
               </div>
               <!-- End of Main Content -->
-
-              <!-- Footer -->
-              <footer class="sticky-footer bg-white">
-                  <div class="container my-auto">
-                      <div class="copyright text-center my-auto">
-                          <span>Copyright &copy; Concept PLV 2024</span>
-                      </div>
-                  </div>
-              </footer>
-              <!-- End of Footer -->
 
           </div>
           <!-- End of Content Wrapper -->
