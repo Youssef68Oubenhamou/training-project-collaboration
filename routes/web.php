@@ -38,6 +38,8 @@ Route::group(['prefix' => 'about-us'], function () {
 
 Route::resource('/admin/works', "\App\Http\Controllers\AdminWorksController");
 
+Route::resource('/admin/categories', "\App\Http\Controllers\AdminCategoriesController");
+
 // Route::get('/dashboard/add-new-work', function () {
 
 //     $categories = \App\Models\Categorie::all() ;

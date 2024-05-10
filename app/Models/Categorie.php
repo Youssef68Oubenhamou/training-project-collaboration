@@ -10,9 +10,16 @@ class Categorie extends Model
 
     use HasFactory;
 
+    protected $fillable = [
+
+        "categorie_name",
+
+    ] ;
+
     public function works()
     {
 
-        return $this->hasMany(Work::class);
+        return $this->hasMany(Work::class) ;
+
     }
 }

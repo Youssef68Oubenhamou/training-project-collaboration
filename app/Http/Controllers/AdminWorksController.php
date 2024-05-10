@@ -44,7 +44,7 @@ class AdminWorksController extends Controller
 
         $file = $request->file("img");
 
-        $design_name = time() . '.' . $file->getClientOriginalName();
+        $design_name = time() . $file->getClientOriginalName();
 
         $file->move("uploads", $design_name);
 

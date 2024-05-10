@@ -26,7 +26,7 @@
             <div class="portfolio-style-one text-center">
                <div class="portfolio-image">
                   <img
-                     src="/uploads/{{$work->path}}"
+                     src="/uploads/{{$work->img}}"
                      alt="image"
                      />
                </div>
