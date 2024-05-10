@@ -20,17 +20,56 @@
       <div class="row">
          <div class="col-lg-12">
             <div class="portfolio-menu">
-               <button data-filter="all" class="active">ALL WORK</button>
+               @foreach ($categories as $category )
+                  <button data-filter="{{$category->categorie_name}}" class="active">{{$category->categorie_name}}</button>
+               @endforeach
+               {{-- <button data-filter="all" class="active">ALL WORK</button>
                <button data-filter="branding">DISPLAY</button>
                <button data-filter="marketing">POINT OF SALE</button>
                <button data-filter="planning">FAIRS & EXPOSITIONS</button>
-               <button data-filter="research">POSM</button>
+               <button data-filter="research">POSM</button> --}}
             </div>
             <!-- portfolio menu -->
          </div>
       </div>
+
       <!-- row -->
       <div class="row grid">
+         @foreach ($works as $work )
+         <div class="col-lg-4 col-sm-6" data-filter="{{$work->categorie->categorie_name}}">
+            <div class="portfolio-style-one text-center">
+               <div class="portfolio-image">
+                  <img
+                     src="{{$work->img}}"
+                     alt="image"
+                     />
+               </div>
+               <div class="portfolio-overlay d-flex align-items-center">
+                  <div class="portfolio-content">
+                     <div class="portfolio-icon">
+                        <a
+                           class="image-popup-two glightbox d-flex align-items-center justify-content-center"
+                           href="https://cdn.ayroui.com/1.0/images/portfolio/portfolio-1/pf1.jpg"
+                           >
+                        <i class="lni lni-zoom-in"></i>
+                        </a>
+                     </div>
+                     <div class="portfolio-text">
+                        <h4 class="portfolio-title">
+                           <a href="javascript:void(0)">{{$work->brand_name}}</a>
+                        </h4>
+                        <p class="text">
+                           {{$work->brand_description}}
+                        </p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- single portfolio -->
+         </div>
+         @endforeach
+      </div>
+      {{-- <div class="row grid">
          <div class="col-lg-4 col-sm-6" data-filter="branding">
             <div class="portfolio-style-one text-center">
                <div class="portfolio-image">
@@ -319,7 +358,7 @@
             </div>
             <!-- single portfolio -->
          </div>
-      </div>
+      </div> --}}
       <!-- row -->
    </div>
    <!-- container -->

@@ -13,6 +13,6 @@ class Categorie extends Model
     public function works()
     {
 
-        return $this->hasMany(\App\Models\Work::class);
+        return $this->hasMany(Work::class);
     }
 }

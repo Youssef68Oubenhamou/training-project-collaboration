@@ -19,6 +19,6 @@ class Work extends Model
     public function categorie()
     {
 
-        return $this->belongsTo(\App\Models\Categorie::class);
+        return $this->belongsTo(Categorie::class);
     }
 }

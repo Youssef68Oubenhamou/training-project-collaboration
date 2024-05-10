@@ -1,14 +1,18 @@
 <?php
 
+use App\Http\Controllers\pagesController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('pages/home');
 })->name('home');
 
-Route::get('/portfolio', function () {
-    return view('pages/portfolio');
-})->name('portfolio');
+// Route::get('/portfolio', function () {
+//     return view('pages/portfolio');
+// })->name('portfolio');
+
+Route::get('/portfolio', [pagesController::class, 'portfolio'])->name('portfolio');
+
 
 Route::get('/contact', function () {
     return view('pages/contact');
@@ -32,7 +36,7 @@ Route::group(['prefix' => 'about-us'], function () {
     })->name('4_aboutLink');
 });
 
-Route::resource('/admin/works', "\App\Http\Controllers\AdminWorksController") ;
+Route::resource('/admin/works', "\App\Http\Controllers\AdminWorksController");
 
 // Route::get('/dashboard/add-new-work', function () {
 
