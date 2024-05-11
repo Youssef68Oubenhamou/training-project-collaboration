@@ -102,8 +102,8 @@
                     <span>Portfolio</span>
                   </div>
                   <ul class="dropdown-menu ml-4" aria-labelledby="dropdownMenuButton">
-                    <li><a class="dropdown-item" href="#">Add new work</a></li>
-                    <li><a class="dropdown-item" href="#">Update work</a></li>
+                    <li><a class="dropdown-item" href="/admin/works">All works</a></li>
+                    <li><a class="dropdown-item" href="/admin/works/create">Add new work</a></li>
                   </ul>
                 </div>
             </li>

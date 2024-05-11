@@ -22,11 +22,11 @@
       <!-- row -->
       <div class="row grid">
          @foreach($works as $work)
-         <div class="col-lg-4 col-sm-6" data-filter="branding">
+         <div class="col-lg-4 col-sm-6" data-filter="{{$work->categorie->categorie_name}}">
             <div class="portfolio-style-one text-center">
                <div class="portfolio-image">
                   <img
-                     src="/uploads/{{$work->img}}"
+                     src="{{$work->img}}"
                      alt="image"
                      />
                </div>
@@ -36,8 +36,15 @@
                            {{ $work->brand_name }}
                         </h4>
                      <div class="actions d-flex gap-3">
-                        <button class="btn btn-success"><a href="{{ route('works.edit' , $work->id) }}" >edit</a></button>
-                        <button class="btn btn-danger">Delete</button>
+                        <button class="btn btn-success"><a href="{{ route('works.edit' , $work->id) }}" >Edit</a></button>
+                        <form method="POST" action="{{ route('works.destroy' , $work->id) }}">
+
+                           {{ csrf_field() }}
+                           {{ method_field('DELETE') }}
+
+                           <button class="btn btn-danger">Delete</button>
+
+                        </form>
                      </div>
                   </div>
                </div>

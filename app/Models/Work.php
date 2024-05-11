@@ -9,6 +9,8 @@ class Work extends Model
 {
     use HasFactory;
 
+    protected $img = "/uploads/" ;
+
     protected $fillable = [
         "categorie_id",
         "img",
@@ -21,4 +23,11 @@ class Work extends Model
 
         return $this->belongsTo(Categorie::class);
     }
+
+    public function getImgAttribute($photo) {
+
+        return $this->img . $photo ;
+
+    }
+
 }

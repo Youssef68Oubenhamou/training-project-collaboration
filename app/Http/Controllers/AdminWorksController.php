@@ -121,6 +121,12 @@ class AdminWorksController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        
+        $work = \App\Models\Work::findOrFail($id) ;
+
+        $work->softDeletes() ;
+
+        return redirect("/admin/works") ;
+
     }
 }
