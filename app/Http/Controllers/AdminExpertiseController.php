@@ -83,6 +83,15 @@ class AdminExpertiseController extends Controller
 
         ]) ;
 
+        $expertise = \App\Models\Expertise::findOrFail($id) ;
+
+        $expertise->creation_infos = $request->creation_infos ;
+
+        $expertise->description_infos = $request->description_infos ;
+
+        $expertise->save() ;
+
+        return redirect("/admin/works") ;
 
     }
 
