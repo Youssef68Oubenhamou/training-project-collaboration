@@ -144,7 +144,8 @@
                 <span>About us</span>
                 </div>
                 <ul class="dropdown-menu ml-4" aria-labelledby="dropdownMenuButton">
-                  <li><a class="dropdown-item" href="#">Our expertise</a></li>
+                  <li><a class="dropdown-item" href="/admin/expertises/">Expertise</a></li>
+                  <li><a class="dropdown-item" href="/admin/expertises/create">Setup Expertise</a></li>
                 </ul>
               </div>
           </li>

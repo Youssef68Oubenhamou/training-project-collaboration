@@ -19,8 +19,13 @@ Route::get('/contact', function () {
 })->name('contact');
 
 Route::group(['prefix' => 'about-us'], function () {
+
     Route::get('/our-expertise', function () {
-        return view('pages/about-us/1_ourExpertise');
+
+        $expertises = \App\Models\Expertise::all() ;
+
+        return view("pages.about-us.1_ourExpertise" , compact("expertises")) ;
+        
     })->name('1_aboutLink');
 
     Route::get('/values-and-philosophy', function () {
@@ -39,6 +44,8 @@ Route::group(['prefix' => 'about-us'], function () {
 Route::resource('/admin/works', "\App\Http\Controllers\AdminWorksController");
 
 Route::resource('/admin/categories', "\App\Http\Controllers\AdminCategoriesController");
+
+Route::resource('/admin/expertises', "\App\Http\Controllers\AdminExpertiseController");
 
 // Route::get('/dashboard/add-new-work', function () {
 

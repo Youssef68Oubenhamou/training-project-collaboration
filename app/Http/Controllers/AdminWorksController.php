@@ -124,7 +124,7 @@ class AdminWorksController extends Controller
         
         $work = \App\Models\Work::findOrFail($id) ;
 
-        $work->softDeletes() ;
+        $work->delete() ;
 
         return redirect("/admin/works") ;
 
