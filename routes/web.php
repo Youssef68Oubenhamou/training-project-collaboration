@@ -16,17 +16,17 @@ Route::get('/portfolio', [pagesController::class, 'portfolio'])->name('portfolio
 
 Route::get('/contact', function () {
 
-    // if ($contact = \App\Models\Contact::findOrFail(1)) {
+    if ($contact = \App\Models\Contact::findOrFail(1)) {
         
-    //     return view('pages/contact' , compact("contact"));
+        return view('pages/contact' , compact("contact"));
     
-    // } else {
+    } else {
 
-    //     return view('pages/contact');
+        return view('pages/contact');
 
-    // }
+    }
 
-    return view('pages/contact');
+    // return view('pages/contact');
 
 })->name('contact');
 

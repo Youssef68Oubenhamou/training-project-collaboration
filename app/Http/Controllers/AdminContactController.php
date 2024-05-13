@@ -48,7 +48,7 @@ class AdminContactController extends Controller
 
         \App\Models\Contact::create($request->all()) ;
 
-        return redirect('/contacting/index') ;
+        return redirect('/admin/contacts') ;
 
     }
 
@@ -65,7 +65,11 @@ class AdminContactController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        
+        $contact = \App\Models\Contact::findOrFail($id) ;
+
+        return view("contacting.edit" , compact("contact")) ;
+
     }
 
     /**
@@ -73,7 +77,33 @@ class AdminContactController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        
+        $request->validate([
+
+            "address" => "required" ,
+            "email" => "required" ,
+            "mobile" => "required" ,
+            "fix_1" => "required" ,
+            "fix_2" => "required" ,
+            "fix_2" => "required" ,
+            "fax" => "required" ,
+
+        ]) ;
+
+        $contact = \App\Models\Contact::findOrFail($id) ;
+
+        $contact->address = $request->address ;
+        $contact->email = $request->email ;
+        $contact->mobile = $request->mobile ;
+        $contact->fix_1 = $request->fix_1 ;
+        $contact->fix_2 = $request->fix_2 ;
+        $contact->fix_3 = $request->fix_3 ;
+        $contact->fax = $request->fax ;
+
+        $contact->save() ;
+
+        return redirect('/admin/contacts') ;
+
     }
 
     /**

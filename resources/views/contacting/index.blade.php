@@ -12,6 +12,7 @@
                 <th scope="col">Fix.2</th>
                 <th scope="col">Fix.3</th>
                 <th scope="col">Fax</th>
+                <th scope="col">Update</th>
             </tr>
         </thead>
         <tbody>
@@ -25,6 +26,7 @@
                     <td>{{$contact->fix_2}}</td>
                     <td>{{$contact->fix_3}}</td>
                     <td>{{$contact->fax}}</td>
+                    <td><button data-mdb-ripple-init type="submit" class="btn add btn-block"><a href="{{ route('contacts.edit' , $contact->id) }}" >Update</a></button></td>
                 </tr>
             @endforeach
         </tbody>
