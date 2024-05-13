@@ -15,7 +15,19 @@ Route::get('/portfolio', [pagesController::class, 'portfolio'])->name('portfolio
 
 
 Route::get('/contact', function () {
+
+    // if ($contact = \App\Models\Contact::findOrFail(1)) {
+        
+    //     return view('pages/contact' , compact("contact"));
+    
+    // } else {
+
+    //     return view('pages/contact');
+
+    // }
+
     return view('pages/contact');
+
 })->name('contact');
 
 Route::group(['prefix' => 'about-us'], function () {
@@ -46,6 +58,8 @@ Route::resource('/admin/works', "\App\Http\Controllers\AdminWorksController");
 Route::resource('/admin/categories', "\App\Http\Controllers\AdminCategoriesController");
 
 Route::resource('/admin/expertises', "\App\Http\Controllers\AdminExpertiseController");
+
+Route::resource('/admin/contacts', "\App\Http\Controllers\AdminContactController");
 
 // Route::get('/dashboard/add-new-work', function () {
 

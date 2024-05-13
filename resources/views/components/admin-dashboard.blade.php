@@ -44,7 +44,7 @@
           <ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center py-5" href="#">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center py-5" href="/admin/works">
               <h4 class="text-title">Admin<br><small>dashboard</small></h4>
             </a>
 
@@ -53,7 +53,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="/admin/works">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -164,7 +164,8 @@
                 <span>Contact</span>
                 </div>
                 <ul class="dropdown-menu ml-4" aria-labelledby="dropdownMenuButton">
-                  <li><a class="dropdown-item" href="#">Update informations</a></li>
+                  <li><a class="dropdown-item" href="{{route('contacts.index')}}">Contact informations</a></li>
+                  <li><a class="dropdown-item" href="{{route('contacts.create')}}">Create Contact infos</a></li>
                 </ul>
               </div>
           </li>

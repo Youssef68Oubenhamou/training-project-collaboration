@@ -106,7 +106,7 @@
                          </div>
                          <div class="info-content">
                             <p class="text">
-                              Km 9, Route d'azemour, Dar Bouâzza Casablanca - Maroc
+                              {{ $contact->address }}
                             </p>
                          </div>
                       </div>
@@ -118,7 +118,7 @@
                            <i class="lni lni-envelope"></i>
                         </div>
                         <div class="info-content">
-                           <p class="text">contact@conceptplv.com</p>
+                           <p class="text">{{ $contact->email }}</p>
                         </div>
                      </div>
                      <!-- single info -->
@@ -129,7 +129,7 @@
                             <i class="lni lni-phone"></i>
                          </div>
                          <div class="info-content">
-                            <p class="text">(+212) 661 49 56 75</p>
+                            <p class="text">{{ $contact->mobile }}</p>
                          </div>
                       </div>
                       <!-- single info -->
@@ -140,7 +140,7 @@
                             <i class="lni lni-phone-set"></i>
                          </div>
                          <div class="info-content">
-                            <p class="text">(+212) 522 29 05 64</p>
+                            <p class="text">{{ $contact->fix_1 }}</p>
                          </div>
                       </div>
                       <!-- single info -->
@@ -151,7 +151,7 @@
                             <i class="lni lni-phone-set"></i>
                          </div>
                          <div class="info-content">
-                            <p class="text">(+212) 522 29 05 18</p>
+                            <p class="text">{{ $contact->fix_2 }}</p>
                          </div>
                       </div>
                       <!-- single info -->
@@ -162,7 +162,7 @@
                             <i class="lni lni-phone-set"></i>
                          </div>
                          <div class="info-content">
-                            <p class="text">(+212) 522 29 04 63</p>
+                            <p class="text">{{ $contact->fix_3 }}</p>
                          </div>
                       </div>
                       <!-- single info -->
@@ -173,7 +173,7 @@
                             <i class="lni lni-phone-set"></i>
                          </div>
                          <div class="info-content">
-                            <p class="text">(+212) 522 29 05 63</p>
+                            <p class="text">{{ $contact->fax }}</p>
                          </div>
                       </div>
                       <!-- single info -->
