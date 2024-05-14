@@ -30,6 +30,8 @@ Route::get('/contact', function () {
 
 })->name('contact');
 
+Route::post("/contact" , [\App\Http\Controllers\AdminContactController::class , "submit"]) ;
+
 Route::group(['prefix' => 'about-us'], function () {
 
     Route::get('/our-expertise', function () {

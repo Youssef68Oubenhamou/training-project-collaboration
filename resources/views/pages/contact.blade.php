@@ -2,94 +2,95 @@
 <x-app>
 <!--====== CONTACT ONE PART START ======-->
 <section class="contact-area">
-    <div class="container">
-       <div class="row">
-          <div class="col-xl-7 col-lg-8">
-             <div class="section-title mt-45">
-                <h3 class="title">Get in touch</h3>
-             </div>
-             <div class="contact-form form-style-four mt-15">
-                <form action="#">
-                   <div class="row">
-                      <div class="col-md-6">
-                         <div class="form-input mt-15">
-                            <label>Full Name</label>
-                            <div class="input-items default">
-                               <i class="lni lni-user"></i>
-                               <input type="text" placeholder="Type here" />
-                            </div>
-                         </div>
-                         <!-- form input -->
-                      </div>
-                      <div class="col-md-6">
-                         <div class="form-input mt-15">
-                            <label>Email Address</label>
-                            <div class="input-items default">
-                               <i class="lni lni-envelope"></i>
-                               <input type="text" placeholder="Type here" />
-                            </div>
-                         </div>
-                         <!-- form input -->
-                      </div>
-                      <div class="col-md-6">
-                         <div class="form-input mt-15">
-                            <label>Phone Number</label>
-                            <div class="input-items default">
-                               <i class="lni lni-phone"></i>
-                               <input type="text" placeholder="Type here" />
-                            </div>
-                         </div>
-                         <!-- form input -->
-                      </div>
-                      <div class="col-md-6">
-                         <div class="form-input mt-15">
-                            <label>Subject</label>
-                            <div class="input-items default">
-                               <i class="lni lni-bubble"></i>
-                               <input type="text" placeholder="Type here" />
-                            </div>
-                         </div>
-                         <!-- form input -->
-                         <!-- form input -->
-                      </div>
-                      <div class="col-md-12">
-                         <div class="form-input mt-15">
-                            <label>Company</label>
-                            <div class="input-items default">
-                               <i class='bx bx-building-house'></i>
-                               <input type="text" placeholder="Type here" />
-                            </div>
-                         </div>
-                         <!-- form input -->
-                      </div>
-                      <div class="col-md-12">
-                         <div class="form-input mt-15">
-                            <label>Your Message</label>
-                            <div class="input-items default">
-                               <i class="lni lni-pencil-alt"></i>
-                               <textarea
-                                  placeholder="Type your message here"
-                                  ></textarea>
-                            </div>
-                         </div>
-                         <!-- form input -->
-                      </div>
-                      <div class="col-md-12">
-                         <div class="single-form mt-15">
-                            <div class="input-form rounded-buttons">
-                               <button
-                                  class="btn primary-btn rounded-full"
-                                  type="submit"
-                                  >
-                               SEND MESSAGE
-                               </button>
-                            </div>
-                         </div>
-                         <!-- single form -->
-                      </div>
-                   </div>
-                   <!-- row -->
-                </form>
+   <div class="container">
+      <div class="row">
+         <div class="col-xl-7 col-lg-8">
+            <div class="section-title mt-45">
+               <h3 class="title">Get in touch</h3>
+            </div>
+            <div class="contact-form form-style-four mt-15">
+               <form method="POST" action="AdminContactController@submit">
+                  <div class="row">
+                     <div class="col-md-6">
+                        <div class="form-input mt-15">
+                           <label>Full Name</label>
+                           <div class="input-items default">
+                              <i class="lni lni-user"></i>
+                              <input type="text" name="name" placeholder="Type here" />
+                           </div>
+                        </div>
+                        <!-- form input -->
+                     </div>
+                     <div class="col-md-6">
+                        <div class="form-input mt-15">
+                           <label>Email Address</label>
+                           <div class="input-items default">
+                              <i class="lni lni-envelope"></i>
+                              <input type="text" name="email" placeholder="Type here" />
+                           </div>
+                        </div>
+                        <!-- form input -->
+                     </div>
+                     <div class="col-md-6">
+                        <div class="form-input mt-15">
+                           <label>Phone Number</label>
+                           <div class="input-items default">
+                              <i class="lni lni-phone"></i>
+                              <input type="text" name="phone" placeholder="Type here" />
+                           </div>
+                        </div>
+                        <!-- form input -->
+                     </div>
+                     <div class="col-md-6">
+                        <div class="form-input mt-15">
+                           <label>Subject</label>
+                           <div class="input-items default">
+                              <i class="lni lni-bubble"></i>
+                              <input type="text" name="subject" placeholder="Type here" />
+                           </div>
+                        </div>
+                        <!-- form input -->
+                        <!-- form input -->
+                     </div>
+                     <div class="col-md-12">
+                        <div class="form-input mt-15">
+                           <label>Company</label>
+                           <div class="input-items default">
+                              <i class='bx bx-building-house'></i>
+                              <input type="text" name="company" placeholder="Type here" />
+                           </div>
+                        </div>
+                        <!-- form input -->
+                     </div>
+                     <div class="col-md-12">
+                        <div class="form-input mt-15">
+                           <label>Your Message</label>
+                           <div class="input-items default">
+                              <i class="lni lni-pencil-alt"></i>
+                              <textarea
+                                 placeholder="Type your message here"
+                                 name="message"
+                              ></textarea>
+                           </div>
+                        </div>
+                        <!-- form input -->
+                     </div>
+                     <div class="col-md-12">
+                        <div class="single-form mt-15">
+                           <div class="input-form rounded-buttons">
+                              <button
+                                 class="btn primary-btn rounded-full"
+                                 type="submit"
+                              >
+                              SEND MESSAGE
+                              </button>
+                           </div>
+                        </div>
+                        <!-- single form -->
+                     </div>
+                  </div>
+                  <!-- row -->
+               </form>
              </div>
              <!-- contact form -->
           </div>

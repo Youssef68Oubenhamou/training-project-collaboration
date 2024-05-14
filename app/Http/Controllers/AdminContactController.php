@@ -113,4 +113,19 @@ class AdminContactController extends Controller
     {
         //
     }
+
+    public function submit(\App\Http\Requests\ContactRequest $request) {
+
+        Mail::to("work10@gmail.com")->send(new \App\Http\Requests\ContactRequest(
+            $request->name ,
+            $request->email ,
+            $request->phone ,
+            $request->subject ,
+            $request->company ,
+            $request->message
+        )) ;
+
+        return redirect("/contact") ;
+
+    }
 }
