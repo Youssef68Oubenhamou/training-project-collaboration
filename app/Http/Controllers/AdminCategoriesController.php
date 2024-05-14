@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Categorie;
 use Illuminate\Http\Request;
 
 class AdminCategoriesController extends Controller
@@ -11,13 +12,10 @@ class AdminCategoriesController extends Controller
      */
     public function index()
     {
-        
-        $categories = \App\Models\Categorie::all() ;
 
-        // dd($categories) ;
+        $categories = Categorie::all();
 
-        return view("categories.index" , compact("categories")) ;
-
+        return view("categories.index", compact("categories"));
     }
 
     /**
@@ -25,9 +23,8 @@ class AdminCategoriesController extends Controller
      */
     public function create()
     {
-        
-        return view("/categories/create") ;
 
+        return view("/categories/create");
     }
 
     /**
@@ -35,15 +32,14 @@ class AdminCategoriesController extends Controller
      */
     public function store(Request $request)
     {
-        
+
         $request->validate([
             "categorie_name" => "required",
-        ]) ;
+        ]);
 
-        \App\Models\Categorie::create($request->all()) ;
+        \App\Models\Categorie::create($request->all());
 
-        return redirect("/admin/categories/") ;
-
+        return redirect("/admin/categories/");
     }
 
     /**
@@ -59,11 +55,10 @@ class AdminCategoriesController extends Controller
      */
     public function edit(string $id)
     {
-        
-        $categorie = \App\Models\Categorie::findOrFail($id) ;
 
-        return view("/categories/edit" , compact("categorie")) ;
+        $categorie = \App\Models\Categorie::findOrFail($id);
 
+        return view("/categories/edit", compact("categorie"));
     }
 
     /**
@@ -71,19 +66,18 @@ class AdminCategoriesController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        
+
         $request->validate([
             "categorie_name" => "required",
-        ]) ;
+        ]);
 
-        $categorie = \App\Models\Categorie::findOrFail($id) ;
+        $categorie = \App\Models\Categorie::findOrFail($id);
 
-        $categorie->categorie_name = $request->categorie_name ;
+        $categorie->categorie_name = $request->categorie_name;
 
-        $categorie->save() ;
+        $categorie->save();
 
-        return redirect("/admin/categories") ;
-
+        return redirect("/admin/categories");
     }
 
     /**

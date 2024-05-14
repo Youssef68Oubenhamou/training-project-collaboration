@@ -11,10 +11,9 @@
          <div class="col-lg-12">
             <div class="portfolio-menu">
                <button data-filter="all" class="active">ALL WORK</button>
-               <button data-filter="branding">DISPLAY</button>
-               <button data-filter="marketing">POINT OF SALE</button>
-               <button data-filter="planning">FAIRS & EXPOSITIONS</button>
-               <button data-filter="research">POSM</button>
+               @foreach ($categories as $category )
+                  <button data-filter="{{$category->categorie_name}}" class="active">{{$category->categorie_name}}</button>
+               @endforeach
             </div>
             <!-- portfolio menu -->
          </div>
@@ -35,16 +34,19 @@
                         <h4 class="text-center text-white">
                            {{ $work->brand_name }}
                         </h4>
-                     <div class="actions d-flex gap-3">
-                        <button class="btn btn-success"><a href="{{ route('works.edit' , $work->id) }}" >Edit</a></button>
-                        <form method="POST" action="{{ route('works.destroy' , $work->id) }}">
-
-                           {{ csrf_field() }}
-                           {{ method_field('DELETE') }}
-
-                           <button class="btn btn-danger">Delete</button>
-
-                        </form>
+                     <div class="actions">
+                        <ul class="d-flex gap-3">
+                           <li>
+                              <a class="btn btn-success" href="{{ route('works.edit' , $work->id) }}" >Edit</a>
+                           </li>
+                           <li>
+                              <form method="POST" action="{{ route('works.destroy' , $work->id) }}">
+                                 @csrf
+                                 @method('delete')
+                                 <button class="btn btn-danger delete-btn">Delete</button>
+                              </form>
+                           </li>
+                        </ul>
                      </div>
                   </div>
                </div>
@@ -52,284 +54,6 @@
             <!-- single portfolio -->
          </div>
          @endforeach
-         <div class="col-lg-4 col-sm-6" data-filter="branding">
-            <div class="portfolio-style-one text-center">
-               <div class="portfolio-image">
-                  <img
-                     src="https://cdn.ayroui.com/1.0/images/portfolio/portfolio-1/pf1.jpg"
-                     alt="image"
-                     />
-               </div>
-               <div class="portfolio-overlay">
-                  <div class="portfolio-content">
-                        <h4 class="text-center text-white">
-                           Graphics Design
-                        </h4>
-                     <div class="actions d-flex gap-3">
-                        <button class="btn btn-success">edit</button>
-                        <button class="btn btn-danger">Delete</button>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <!-- single portfolio -->
-         </div>
-         <div class="col-lg-4 col-sm-6" data-filter="marketing">
-            <div class="portfolio-style-one text-center">
-               <div class="portfolio-image">
-                  <img
-                     src="https://cdn.ayroui.com/1.0/images/portfolio/portfolio-1/pf2.jpg"
-                     alt="image"
-                     />
-               </div>
-               <div class="portfolio-overlay d-flex align-items-center">
-                  <div class="portfolio-content">
-                     <div class="portfolio-icon">
-                        <a
-                           class="image-popup-two glightbox"
-                           href="https://cdn.ayroui.com/1.0/images/portfolio/portfolio-1/pf2.jpg"
-                           >
-                        <i class="lni lni-zoom-in"></i>
-                        </a>
-                     </div>
-                     <div class="portfolio-text">
-                        <h4 class="portfolio-title">
-                           <a href="javascript:void(0)">Graphics Design</a>
-                        </h4>
-                        <p class="text">
-                           Short description for the ones who look for something new.
-                           Awesome!
-                        </p>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <!-- single portfolio -->
-         </div>
-         <div class="col-lg-4 col-sm-6" data-filter="branding">
-            <div class="portfolio-style-one text-center">
-               <div class="portfolio-image">
-                  <img
-                     src="https://cdn.ayroui.com/1.0/images/portfolio/portfolio-1/pf3.jpg"
-                     alt="image"
-                     />
-               </div>
-               <div class="portfolio-overlay d-flex align-items-center">
-                  <div class="portfolio-content">
-                     <div class="portfolio-icon">
-                        <a
-                           class="image-popup-two glightbox"
-                           href="https://cdn.ayroui.com/1.0/images/portfolio/portfolio-1/pf3.jpg"
-                           >
-                        <i class="lni lni-zoom-in"></i>
-                        </a>
-                     </div>
-                     <div class="portfolio-text">
-                        <h4 class="portfolio-title">
-                           <a href="javascript:void(0)">Graphics Design</a>
-                        </h4>
-                        <p class="text">
-                           Short description for the ones who look for something new.
-                           Awesome!
-                        </p>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <!-- single portfolio -->
-         </div>
-         <div class="col-lg-4 col-sm-6" data-filter="research">
-            <div class="portfolio-style-one text-center">
-               <div class="portfolio-image">
-                  <img
-                     src="https://cdn.ayroui.com/1.0/images/portfolio/portfolio-1/pf4.jpg"
-                     alt="image"
-                     />
-               </div>
-               <div class="portfolio-overlay d-flex align-items-center">
-                  <div class="portfolio-content">
-                     <div class="portfolio-icon">
-                        <a
-                           class="image-popup-two glightbox"
-                           href="https://cdn.ayroui.com/1.0/images/portfolio/portfolio-1/pf4.jpg"
-                           >
-                        <i class="lni lni-zoom-in"></i>
-                        </a>
-                     </div>
-                     <div class="portfolio-text">
-                        <h4 class="portfolio-title">
-                           <a href="javascript:void(0)">Graphics Design</a>
-                        </h4>
-                        <p class="text">
-                           Short description for the ones who look for something new.
-                           Awesome!
-                        </p>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <!-- single portfolio -->
-         </div>
-         <div class="col-lg-4 col-sm-6" data-filter="planning">
-            <div class="portfolio-style-one text-center">
-               <div class="portfolio-image">
-                  <img
-                     src="https://cdn.ayroui.com/1.0/images/portfolio/portfolio-1/pf5.jpg"
-                     alt="image"
-                     />
-               </div>
-               <div class="portfolio-overlay d-flex align-items-center">
-                  <div class="portfolio-content">
-                     <div class="portfolio-icon">
-                        <a
-                           class="image-popup-two glightbox"
-                           href="https://cdn.ayroui.com/1.0/images/portfolio/portfolio-1/pf5.jpg"
-                           >
-                        <i class="lni lni-zoom-in"></i>
-                        </a>
-                     </div>
-                     <div class="portfolio-text">
-                        <h4 class="portfolio-title">
-                           <a href="javascript:void(0)">Graphics Design</a>
-                        </h4>
-                        <p class="text">
-                           Short description for the ones who look for something new.
-                           Awesome!
-                        </p>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <!-- single portfolio -->
-         </div>
-         <div class="col-lg-4 col-sm-6" data-filter="research">
-            <div class="portfolio-style-one text-center">
-               <div class="portfolio-image">
-                  <img
-                     src="https://cdn.ayroui.com/1.0/images/portfolio/portfolio-1/pf6.jpg"
-                     alt="image"
-                     />
-               </div>
-               <div class="portfolio-overlay d-flex align-items-center">
-                  <div class="portfolio-content">
-                     <div class="portfolio-icon">
-                        <a
-                           class="image-popup-two glightbox"
-                           href="https://cdn.ayroui.com/1.0/images/portfolio/portfolio-1/pf6.jpg"
-                           >
-                        <i class="lni lni-zoom-in"></i>
-                        </a>
-                     </div>
-                     <div class="portfolio-text">
-                        <h4 class="portfolio-title">
-                           <a href="javascript:void(0)">Graphics Design</a>
-                        </h4>
-                        <p class="text">
-                           Short description for the ones who look for something new.
-                           Awesome!
-                        </p>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <!-- single portfolio -->
-         </div>
-         <div class="col-lg-4 col-sm-6" data-filter="planning">
-            <div class="portfolio-style-one text-center">
-               <div class="portfolio-image">
-                  <img
-                     src="https://cdn.ayroui.com/1.0/images/portfolio/portfolio-1/pf7.jpg"
-                     alt="image"
-                     />
-               </div>
-               <div class="portfolio-overlay d-flex align-items-center">
-                  <div class="portfolio-content">
-                     <div class="portfolio-icon">
-                        <a
-                           class="image-popup-two glightbox"
-                           href="https://cdn.ayroui.com/1.0/images/portfolio/portfolio-1/pf7.jpg"
-                           >
-                        <i class="lni lni-zoom-in"></i>
-                        </a>
-                     </div>
-                     <div class="portfolio-text">
-                        <h4 class="portfolio-title">
-                           <a href="javascript:void(0)">Graphics Design</a>
-                        </h4>
-                        <p class="text">
-                           Short description for the ones who look for something new.
-                           Awesome!
-                        </p>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <!-- single portfolio -->
-         </div>
-         <div class="col-lg-4 col-sm-6" data-filter="branding">
-            <div class="portfolio-style-one text-center">
-               <div class="portfolio-image">
-                  <img
-                     src="https://cdn.ayroui.com/1.0/images/portfolio/portfolio-1/pf8.jpg"
-                     alt="image"
-                     />
-               </div>
-               <div class="portfolio-overlay d-flex align-items-center">
-                  <div class="portfolio-content">
-                     <div class="portfolio-icon">
-                        <a
-                           class="image-popup-two glightbox"
-                           href="https://cdn.ayroui.com/1.0/images/portfolio/portfolio-1/pf8.jpg"
-                           >
-                        <i class="lni lni-zoom-in"></i>
-                        </a>
-                     </div>
-                     <div class="portfolio-text">
-                        <h4 class="portfolio-title">
-                           <a href="javascript:void(0)">Graphics Design</a>
-                        </h4>
-                        <p class="text">
-                           Short description for the ones who look for something new.
-                           Awesome!
-                        </p>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <!-- single portfolio -->
-         </div>
-         <div class="col-lg-4 col-sm-6" data-filter="marketing">
-            <div class="portfolio-style-one text-center">
-               <div class="portfolio-image">
-                  <img
-                     src="https://cdn.ayroui.com/1.0/images/portfolio/portfolio-1/pf9.jpg"
-                     alt="image"
-                     />
-               </div>
-               <div class="portfolio-overlay d-flex align-items-center">
-                  <div class="portfolio-content">
-                     <div class="portfolio-icon">
-                        <a
-                           class="image-popup-two glightbox"
-                           href="https://cdn.ayroui.com/1.0/images/portfolio/portfolio-1/pf9.jpg"
-                           >
-                        <i class="lni lni-zoom-in"></i>
-                        </a>
-                     </div>
-                     <div class="portfolio-text">
-                        <h4 class="portfolio-title">
-                           <a href="javascript:void(0)">Graphics Design</a>
-                        </h4>
-                        <p class="text">
-                           Short description for the ones who look for something new.
-                           Awesome!
-                        </p>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <!-- single portfolio -->
-         </div>
       </div>
       <!-- row -->
    </div>
@@ -390,3 +114,5 @@
     </script>
 
 </x-admin-dashboard>
+
+<script src="{{asset('js/delete-confirmation.js')}}"></script>

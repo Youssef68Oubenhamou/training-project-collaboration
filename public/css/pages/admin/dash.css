@@ -8,3 +8,8 @@
     flex-direction: column !important;
     gap: 25px !important;
 }
+
+* {
+    text-decoration: none;
+    list-style: none;
+}

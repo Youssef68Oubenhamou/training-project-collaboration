@@ -13,10 +13,10 @@ class AdminWorksController extends Controller
      */
     public function index()
     {
-
+        $categories = Categorie::all();
         $works = Work::all();
 
-        return view("admin.index", compact("works"));
+        return view("admin.index", compact("works", "categories"));
     }
 
     /**
@@ -121,12 +121,11 @@ class AdminWorksController extends Controller
      */
     public function destroy(string $id)
     {
-        
-        $work = \App\Models\Work::findOrFail($id) ;
 
-        $work->delete() ;
+        $work = \App\Models\Work::findOrFail($id);
 
-        return redirect("/admin/works") ;
+        $work->delete();
 
+        return redirect("/admin/works");
     }
 }
