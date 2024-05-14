@@ -37,7 +37,7 @@ class AdminCategoriesController extends Controller
             "categorie_name" => "required",
         ]);
 
-        \App\Models\Categorie::create($request->all());
+        Categorie::create($request->all());
 
         return redirect("/admin/categories/");
     }
@@ -56,7 +56,7 @@ class AdminCategoriesController extends Controller
     public function edit(string $id)
     {
 
-        $categorie = \App\Models\Categorie::findOrFail($id);
+        $categorie = Categorie::findOrFail($id);
 
         return view("/categories/edit", compact("categorie"));
     }
@@ -71,7 +71,7 @@ class AdminCategoriesController extends Controller
             "categorie_name" => "required",
         ]);
 
-        $categorie = \App\Models\Categorie::findOrFail($id);
+        $categorie = Categorie::findOrFail($id);
 
         $categorie->categorie_name = $request->categorie_name;
 
@@ -85,6 +85,8 @@ class AdminCategoriesController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $categorie = Categorie::findOrFail($id);
+        $categorie->delete();
+        return to_route('categories.index')->with('success', 'category deleted successfully');
     }
 }
