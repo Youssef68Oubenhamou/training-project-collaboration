@@ -2,18 +2,6 @@
 <x-admin-dashboard dashTitle='All categories'>
 
     <div class="container">
-        {{-- @foreach($categories as $categorie)
-            <div class="row mb-4">
-                <div data-mdb-input-init class="form-outline mb-2 col">
-                    {{ $categorie->categorie_name }}
-                </div>
-                <button data-mdb-ripple-init type="submit" class="btn add btn-block col">
-                    <a href="{{route('categories.edit' , $categorie->id)}}">Edit</a>
-                </button>
-            </div>
-        @endforeach --}}
-    </div>
-
     <table class="table align-middle mb-0 bg-white">
         <div>
           @if (session()->has('success'))
@@ -41,7 +29,7 @@
                       <td>
                         <div class="d-flex align-items-center">
                           <div class="ms-3">
-                            <p class="fw-bold mb-1">{{ $categorie->categorie_name }}}</p>
+                            <p class="fw-bold mb-1">{{ $categorie->categorie_name }}</p>
                           </div>
                         </div>
                       </td>

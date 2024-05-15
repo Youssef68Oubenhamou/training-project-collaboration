@@ -81,7 +81,7 @@
                 <span>Categories</span>
                 </div>
                 <ul class="dropdown-menu ml-4" aria-labelledby="dropdownMenuButton">
-                  <li><a class="dropdown-item" href="{{route('categories.index')}}">Categories</a></li>
+                  <li><a class="dropdown-item" href="{{route('categories.index')}}">All categories</a></li>
                   <li><a class="dropdown-item" href="{{route('categories.create')}}">Add new Category</a></li>
                 </ul>
               </div>
