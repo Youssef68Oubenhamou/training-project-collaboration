@@ -73,7 +73,7 @@
                             <a href="{{route('portfolio')}}">Protfolio</a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{route('contact')}}">Contact</a>
+                            <a href="{{route('contact.show')}}">Contact</a>
                         </li>
                     </ul>
                     </div>

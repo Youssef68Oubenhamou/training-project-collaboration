@@ -9,7 +9,10 @@
                <h3 class="title">Get in touch</h3>
             </div>
             <div class="contact-form form-style-four mt-15">
-               <form method="POST" action="AdminContactController@submit">
+               <form method="POST" action="{{route('contact.submit')}}">
+
+                  @csrf
+
                   <div class="row">
                      <div class="col-md-6">
                         <div class="form-input mt-15">
@@ -46,7 +49,7 @@
                            <label>Subject</label>
                            <div class="input-items default">
                               <i class="lni lni-bubble"></i>
-                              <input type="text" name="subject" placeholder="Type here" />
+                              <input type="text" name="sub" placeholder="Type here" />
                            </div>
                         </div>
                         <!-- form input -->

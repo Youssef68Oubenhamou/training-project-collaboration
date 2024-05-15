@@ -41,7 +41,7 @@
                       <td>
                         <div class="d-flex align-items-center">
                           <div class="ms-3">
-                            <p class="fw-bold mb-1">{{ $categorie->categorie_name }}}</p>
+                            <p class="fw-bold mb-1">{{ $categorie->categorie_name }}</p>
                           </div>
                         </div>
                       </td>

@@ -13,24 +13,9 @@ Route::get('/', function () {
 
 Route::get('/portfolio', [pagesController::class, 'portfolio'])->name('portfolio');
 
+Route::get("/user/contact" , [\App\Http\Controllers\UserContactController::class , "show"])->name("contact.show") ;
 
-Route::get('/contact', function () {
-
-    if ($contact = \App\Models\Contact::findOrFail(1)) {
-        
-        return view('pages/contact' , compact("contact"));
-    
-    } else {
-
-        return view('pages/contact');
-
-    }
-
-    // return view('pages/contact');
-
-})->name('contact');
-
-Route::post("/contact" , [\App\Http\Controllers\AdminContactController::class , "submit"]) ;
+Route::post("/user/contact/submit" , [\App\Http\Controllers\UserContactController::class , "submit"])->name("contact.submit") ;
 
 Route::group(['prefix' => 'about-us'], function () {
 
