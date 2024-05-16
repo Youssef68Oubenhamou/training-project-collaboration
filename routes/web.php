@@ -48,6 +48,8 @@ Route::resource('/admin/expertises', "\App\Http\Controllers\AdminExpertiseContro
 
 Route::resource('/admin/contacts', "\App\Http\Controllers\AdminContactController");
 
+Route::resource('/admin/clients', "\App\Http\Controllers\AdminClientsController");
+
 // Route::get('/dashboard/add-new-work', function () {
 
 //     $categories = \App\Models\Categorie::all() ;

@@ -123,8 +123,8 @@
                 <span>Our awsome clients</span>
                 </div>
                 <ul class="dropdown-menu ml-4" aria-labelledby="dropdownMenuButton">
-                  <li><a class="dropdown-item" href="#">Add new client</a></li>
-                  <li><a class="dropdown-item" href="#">Update client</a></li>
+                  <li><a class="dropdown-item" href="{{route('clients.index')}}">Show clients</a></li>
+                  <li><a class="dropdown-item" href="{{route('clients.create')}}">Add new client</a></li>
                 </ul>
               </div>
           </li>
