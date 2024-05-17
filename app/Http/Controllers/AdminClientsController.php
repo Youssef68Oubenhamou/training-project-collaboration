@@ -73,7 +73,11 @@ class AdminClientsController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        
+        $client = \App\Models\Client::findOrFail($id) ;
+
+        return view("clients.edit" , compact("client")) ;
+
     }
 
     /**
@@ -81,7 +85,32 @@ class AdminClientsController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        
+        $request->validate([
+
+            "client_name" => "required" ,
+            "client_logo" => "required"
+
+        ]) ;
+
+        $file = $request->file("client_logo") ;
+
+        $name = time() . $file->getClientOriginalName() ;
+
+        $file->move("client_uploads" , $name) ;
+
+        $request->client_logo = $name ;
+
+        $client = \App\Models\Client::findOrFail($id) ;
+
+        $client->client_name = $request->client_name ;
+
+        $client->client_logo = $request->client_logo ;
+
+        $client->save() ;
+
+        return redirect("/admin/clients") ;
+
     }
 
     /**

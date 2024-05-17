@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="{{asset('css/pages/admin/add-new-work.css')}}">
-<x-admin-dashboard dashTitle='Contact'>
+<x-admin-dashboard dashTitle='Client'>
 
     <table class="table table-primary">
         <thead>
@@ -15,8 +15,8 @@
                 <tr>
                     <th scope="row">1</th>
                     <td>{{$client->client_name}}</td>
-                    <td>{{$client->client_logo}}</td>
-                    <td><button data-mdb-ripple-init type="submit" class="btn add btn-block"><a href="{{ route('clients.edit' , $client->id) }}" >Update</a></button></td>
+                    <td><img src="{{ $client->client_logo }}" height="70" width="150" alt="Not Found" /></td>
+                    <td><a href="{{ route('clients.edit' , $client->id) }}" data-mdb-ripple-init class="btn add" >Update</a></td>
                 </tr>
             @endforeach
         </tbody>

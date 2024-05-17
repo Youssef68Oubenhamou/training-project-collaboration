@@ -1,20 +1,25 @@
 <link rel="stylesheet" href="{{asset('css/pages/admin/add-new-work.css')}}">
 <x-admin-dashboard dashTitle='Expertise'>
 
-    <div class="container">
-        @foreach($expertises as $expertise)
-            <div class="row mb-4">
-                <div data-mdb-input-init class="form-outline mb-2 col">
-                    {{ $expertise->creation_infos }}
-                </div>
-                <div data-mdb-input-init class="form-outline mb-2 col">
-                    {{ $expertise->description_infos }}
-                </div>
-                <button data-mdb-ripple-init type="submit" class="btn add btn-block col">
-                    <a href="{{route('expertises.edit' , $expertise->id)}}">Edit</a>
-                </button>
-            </div>
-        @endforeach
-    </div>
+    <table class="table table-primary">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Creation infos</th>
+                <th scope="col">Description infos</th>
+                <th scope="col">Update</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($expertises as $expertise)
+                <tr>
+                    <th scope="row">1</th>
+                    <td>{{$expertise->creation_infos}}</td>
+                    <td>{{ $expertise->description_infos }}</td>
+                    <td><a href="{{ route('expertises.edit' , $expertise->id) }}" data-mdb-ripple-init class="btn add" >Update</a></td>
+                </tr>
+            @endforeach
+        </tbody>
+    </table>
 
 </x-admin-dashboard>
