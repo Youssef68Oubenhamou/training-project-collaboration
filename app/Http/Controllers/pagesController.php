@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Categorie;
 use App\Models\Work;
-use Illuminate\Http\Request;
 
 class pagesController extends Controller
 {

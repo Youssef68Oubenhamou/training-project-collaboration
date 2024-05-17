@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Expertise;
 use Illuminate\Http\Request;
 
 class AdminExpertiseController extends Controller
@@ -11,11 +12,10 @@ class AdminExpertiseController extends Controller
      */
     public function index()
     {
-        
-        $expertises = \App\Models\Expertise::all() ;
 
-        return view("expertise.index" , compact('expertises')) ;
+        $expertises = Expertise::all();
 
+        return view("expertise.index", compact('expertises'));
     }
 
     /**
@@ -23,9 +23,8 @@ class AdminExpertiseController extends Controller
      */
     public function create()
     {
-        
-        return view("expertise.create") ;
 
+        return view("expertise.create");
     }
 
     /**
@@ -33,21 +32,20 @@ class AdminExpertiseController extends Controller
      */
     public function store(Request $request)
     {
-        
+
         $request->validate([
 
-            "creation_infos" => "required" ,
+            "creation_infos" => "required",
             "description_infos" => "required"
 
-        ]) ;
+        ]);
 
-        \App\Models\Expertise::create([
-            "creation_infos" => $request->creation_infos ,
+        Expertise::create([
+            "creation_infos" => $request->creation_infos,
             "description_infos" => $request->description_infos
-        ]) ;
+        ]);
 
-        return redirect("/admin/works") ;
-
+        return redirect("/admin/works");
     }
 
     /**
@@ -64,10 +62,9 @@ class AdminExpertiseController extends Controller
     public function edit(string $id)
     {
 
-        $expertise = \App\Models\Expertise::findOrFail($id) ;
+        $expertise = Expertise::findOrFail($id);
 
-        return view("expertise.edit" , compact("expertise")) ;
-        
+        return view("expertise.edit", compact("expertise"));
     }
 
     /**
@@ -75,24 +72,23 @@ class AdminExpertiseController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        
+
         $request->validate([
 
-            "creation_infos" => "required" ,
+            "creation_infos" => "required",
             "description_infos" => "required"
 
-        ]) ;
+        ]);
 
-        $expertise = \App\Models\Expertise::findOrFail($id) ;
+        $expertise = Expertise::findOrFail($id);
 
-        $expertise->creation_infos = $request->creation_infos ;
+        $expertise->creation_infos = $request->creation_infos;
 
-        $expertise->description_infos = $request->description_infos ;
+        $expertise->description_infos = $request->description_infos;
 
-        $expertise->save() ;
+        $expertise->save();
 
-        return redirect("/admin/works") ;
-
+        return redirect("/admin/works");
     }
 
     /**

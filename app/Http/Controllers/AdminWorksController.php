@@ -108,9 +108,6 @@ class AdminWorksController extends Controller
                 "brand_name" => $request->brand_name,
                 "brand_description" => $request->brand_description,
             ]);
-
-            // $work->save() ;
-
         }
 
         return redirect("/admin/works");
@@ -122,7 +119,7 @@ class AdminWorksController extends Controller
     public function destroy(string $id)
     {
 
-        $work = \App\Models\Work::findOrFail($id);
+        $work = Work::findOrFail($id);
 
         $work->delete();
 

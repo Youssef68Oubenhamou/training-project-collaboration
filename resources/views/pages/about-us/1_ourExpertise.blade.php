@@ -15,9 +15,6 @@
                         {{ $expertise->description_infos }}
                      </p>
                   @endforeach
-                  <!-- Created in 1985, Concept PLV specializes in all kinds of multi-material point of sale advertising and equipment tools design and manufacture.
-                  The company has extensive knowledge of the whole process, from design to fabrication to installation and maintenance of your advertising displays. Whether it’s about standard adapted or custom displays, or specific bespoke solutions, Concept PLV puts its creativity and expertise at your service to provide you with quality products in the complementary fields of POS advertisingand store equipment.
-                  -->
                </div>
             </div>
             <div class="col-xl-6 col-lg-6">
