@@ -14,16 +14,31 @@ class LoginController extends Controller
     }
     public function handle(Request $request)
     {
-        $creadentials = $request->validate([
-            'email' => ['required', 'email'],
-            'password' => ['required', 'min:3'],
-        ]);
+        // $credentials = $request->validate([
+        //     'email' => ['required', 'email'],
+        //     'password' => ['required', 'min:3'],
+        // ]);
+
+        $request->validate([
+
+            "email" => ["required" , "email"] ,
+            "password" => ["required" , "min:3"]
+
+        ]) ;
+
+        $credentials = [
+            
+            "email" => $request->email ,
+            "password" => $request->password
+
+        ] ;
+
         // dd(Hash::make($request->password));
 
-        $success = Auth::attempt($creadentials, true);
+        $success = Auth::attempt($credentials);
         if ($success) {
             $request->session()->regenerate();
-            return to_route('/admin/works');
+            return to_route('admin/works');
         } else {
             return to_route('login');
         }

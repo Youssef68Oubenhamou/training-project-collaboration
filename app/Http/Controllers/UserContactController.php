@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\ContactRequest;
 use App\Mail\ContactMail;
 use App\Models\Contact;
+use App\Models\Client;
 use Illuminate\Support\Facades\Mail;
 
 class UserContactController extends Controller
@@ -14,7 +15,8 @@ class UserContactController extends Controller
     {
 
         $contact = Contact::findOrFail(1);
-        return view('pages.contact', compact("contact"));
+        $clients = Client::all();
+        return view('pages.contact', compact("contact" , "clients"));
     }
 
     public function submit(ContactRequest $request)

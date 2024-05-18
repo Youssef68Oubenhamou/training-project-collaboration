@@ -17,7 +17,7 @@ class GuestMiddleware
     public function handle(Request $request, Closure $next): Response
     {
         if (Auth::check()) {
-            return to_route('/admin/works');
+            return to_route('works.index');
         }
         return $next($request);
     }

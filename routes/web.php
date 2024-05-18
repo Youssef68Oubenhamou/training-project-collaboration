@@ -9,10 +9,12 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\pagesController;
 use App\Http\Controllers\UserContactController;
 use App\Models\Expertise;
+use App\Models\Client;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('pages/home');
+    $clients = Client::all();
+    return view('pages/home' , compact("clients"));
 })->name('home');
 
 Route::get('login', [LoginController::class, 'login'])
@@ -32,24 +34,28 @@ Route::post("/user/contact/submit", [UserContactController::class, "submit"])->n
 Route::group(['prefix' => 'about-us'], function () {
     Route::get('/our-expertise', function () {
         $expertises = Expertise::all();
-        return view("pages.about-us.1_ourExpertise", compact("expertises"));
+        $clients = Client::all();
+        return view("pages.about-us.1_ourExpertise", compact("expertises" , "clients"));
     })->name('1_aboutLink');
 
     Route::get('/values-and-philosophy', function () {
-        return view('pages/about-us/2_valuesAndPhilosophy');
+        $clients = Client::all();
+        return view('pages/about-us/2_valuesAndPhilosophy' , compact("clients"));
     })->name('2_aboutLink');
 
     Route::get('/our-assets', function () {
-        return view('pages/about-us/3_ourAssets');
+        $clients = Client::all();
+        return view('pages/about-us/3_ourAssets' , compact("clients"));
     })->name('3_aboutLink');
 
     Route::get('/technical-means', function () {
-        return view('pages/about-us/4_technicalMeans');
+        $clients = Client::all();
+        return view('pages/about-us/4_technicalMeans' , compact("clients"));
     })->name('4_aboutLink');
 });
 
 
-Route::group(['prefix' => 'admin'], function () {
+Route::group(['prefix' => 'admin' , "middleware" => "auth"], function () {
     Route::resource('/works', AdminWorksController::class);
     // ->middleware('auth');
     Route::resource('/categories', AdminCategoriesController::class);
