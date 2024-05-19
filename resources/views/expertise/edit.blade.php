@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="{{asset('css/pages/admin/add-new-work.css')}}">
-<x-admin-dashboard dashTitle='Create categorie'>
+<x-admin-dashboard dashTitle='Update expertise'>
     <form method="POST" action="{{route('expertises.update' , $expertise->id)}}" enctype="multipart/form-data">
 
         @csrf

@@ -38,7 +38,7 @@ class LoginController extends Controller
         $success = Auth::attempt($credentials);
         if ($success) {
             $request->session()->regenerate();
-            return to_route('admin/works');
+            return to_route('works.index');
         } else {
             return to_route('login');
         }

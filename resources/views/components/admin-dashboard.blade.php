@@ -224,7 +224,10 @@
                             aria-labelledby="navbarDropdownMenuAvatar"
                           >
                             <li>
-                              <a class="dropdown-item" href="#">Logout</a>
+                              <form method="POST" action="{{route('logout')}}">
+                                @csrf
+                                <button class="dropdown-item" type="submit" >Logout</button>
+                              </form>
                             </li>
                           </ul>
                         </div>

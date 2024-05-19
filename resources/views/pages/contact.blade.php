@@ -109,9 +109,15 @@
                             <i class="lni lni-map-marker"></i>
                          </div>
                          <div class="info-content">
-                            <p class="text">
-                              {{ $contact->address }}
-                            </p>
+                              @if ($contact)
+                              <p class="text">
+                                 {{ $contact->address }}
+                              </p>
+                              @else
+                                 <p class="text">
+                                    
+                                 </p>
+                              @endif
                          </div>
                       </div>
                       <!-- single info -->
@@ -122,7 +128,15 @@
                            <i class="lni lni-envelope"></i>
                         </div>
                         <div class="info-content">
-                           <p class="text">{{ $contact->email }}</p>
+                              @if ($contact)
+                              <p class="text">
+                                 {{ $contact->email }}
+                              </p>
+                              @else
+                                 <p class="text">
+                                    
+                                 </p>
+                              @endif
                         </div>
                      </div>
                      <!-- single info -->
@@ -133,7 +147,15 @@
                             <i class="lni lni-phone"></i>
                          </div>
                          <div class="info-content">
-                            <p class="text">{{ $contact->mobile }}</p>
+                              @if ($contact)
+                              <p class="text">
+                                 {{ $contact->phone }}
+                              </p>
+                              @else
+                                 <p class="text">
+                                    
+                                 </p>
+                              @endif
                          </div>
                       </div>
                       <!-- single info -->
@@ -144,7 +166,15 @@
                             <i class="lni lni-phone-set"></i>
                          </div>
                          <div class="info-content">
-                            <p class="text">{{ $contact->fix_1 }}</p>
+                              @if ($contact)
+                              <p class="text">
+                                 {{ $contact->fix_1 }}
+                              </p>
+                              @else
+                                 <p class="text">
+                                    
+                                 </p>
+                              @endif
                          </div>
                       </div>
                       <!-- single info -->
@@ -155,7 +185,15 @@
                             <i class="lni lni-phone-set"></i>
                          </div>
                          <div class="info-content">
-                            <p class="text">{{ $contact->fix_2 }}</p>
+                              @if ($contact)
+                              <p class="text">
+                                 {{ $contact->fix_2 }}
+                              </p>
+                              @else
+                                 <p class="text">
+                                    
+                                 </p>
+                              @endif
                          </div>
                       </div>
                       <!-- single info -->
@@ -166,7 +204,15 @@
                             <i class="lni lni-phone-set"></i>
                          </div>
                          <div class="info-content">
-                            <p class="text">{{ $contact->fix_3 }}</p>
+                              @if ($contact)
+                              <p class="text">
+                                 {{ $contact->fix_3 }}
+                              </p>
+                              @else
+                                 <p class="text">
+                                    
+                                 </p>
+                              @endif
                          </div>
                       </div>
                       <!-- single info -->
@@ -177,7 +223,15 @@
                             <i class="lni lni-phone-set"></i>
                          </div>
                          <div class="info-content">
-                            <p class="text">{{ $contact->fax }}</p>
+                              @if ($contact)
+                              <p class="text">
+                                 {{ $contact->fax }}
+                              </p>
+                              @else
+                                 <p class="text">
+                                    
+                                 </p>
+                              @endif
                          </div>
                       </div>
                       <!-- single info -->

@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="{{asset('css/pages/admin/add-new-work.css')}}">
-<x-admin-dashboard dashTitle='Add Client'>
+<x-admin-dashboard dashTitle='Update Client'>
     <form method="POST" action="{{route('clients.update' , $client->id)}}" enctype="multipart/form-data">
 
         @csrf

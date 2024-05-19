@@ -50,8 +50,7 @@
                         <small class="text-danger">{{$message}}</small>
                     @enderror
                     <div class="d-grid">
-                      <button class="btn btn-login text-uppercase fw-bold" type="submit">Sign
-                        in</button>
+                      <button class="btn btn-login text-uppercase fw-bold" type="submit">Sign in</button>
                     </div>
                   </form>
                 </div>
