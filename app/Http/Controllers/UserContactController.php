@@ -14,9 +14,9 @@ class UserContactController extends Controller
     public function show()
     {
 
-        $contact = Contact::findOrFail(1);
-        $clients = Client::all();
-        return view('pages.contact', compact("contact" , "clients"));
+        $contacts = Contact::all() ;
+        $clients = Client::all() ;
+        return view('pages.contact', compact("contacts" , "clients")) ;
 
     }
 
