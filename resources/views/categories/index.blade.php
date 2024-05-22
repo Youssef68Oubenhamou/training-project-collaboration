@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="{{asset('css/pages/admin/add-new-work.css')}}">
 <x-admin-dashboard dashTitle='All categories'>
 
-    <div class="container">
+    <div class="container categories-page">
     <table class="table align-middle mb-0 bg-white">
         <div>
           @if (session()->has('success'))
@@ -57,6 +57,7 @@
                   @endif
           </tbody>
         </table>
+      </div>
 </x-admin-dashboard>
 
 <script src="{{asset('js/delete-confirmation.js')}}"></script>

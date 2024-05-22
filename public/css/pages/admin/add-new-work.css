@@ -2,3 +2,11 @@
     background-color: #009ee0 !important;
     color: #fff !important;
 }
+
+@media (max-width: 1101px) {
+    .categories-page,
+    .contact-page,
+    .expertise-page {
+        overflow-x: scroll !important;
+    }
+}

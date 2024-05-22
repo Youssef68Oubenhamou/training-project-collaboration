@@ -13,7 +13,7 @@ class AdminContactController extends Controller
     public function index()
     {
 
-        $contacts = \App\Models\Contact::all();
+        $contacts = Contact::all();
 
         return view("contacting.index", compact("contacts"));
     }
@@ -33,8 +33,7 @@ class AdminContactController extends Controller
     public function store(Request $request)
     {
 
-        $request->validate([
-
+        $contact_data = $request->validate([
             "address" => "required",
             "email" => "required",
             "mobile" => "required",
@@ -42,10 +41,10 @@ class AdminContactController extends Controller
             "fix_2" => "required",
             "fix_3" => "required",
             "fax" => "required",
-
         ]);
 
-        Contact::create($request->all());
+        // Contact::create($contact_data);
+        Contact::create($contact_data);
 
         return redirect('/admin/contacts');
     }
@@ -107,6 +106,8 @@ class AdminContactController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $contact = Contact::findOrFail($id);
+        $contact->delete();
+        return redirect('/admin/contacts')->with('success', 'contact informations deleted successfully');
     }
 }

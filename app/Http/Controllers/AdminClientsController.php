@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Client;
 use Illuminate\Http\Request;
 
 class AdminClientsController extends Controller
@@ -11,11 +12,10 @@ class AdminClientsController extends Controller
      */
     public function index()
     {
-        
-        $clients = \App\Models\Client::all() ;
 
-        return view("clients.index" , compact("clients")) ;
+        $clients = Client::all();
 
+        return view("clients.index", compact("clients"));
     }
 
     /**
@@ -23,9 +23,8 @@ class AdminClientsController extends Controller
      */
     public function create()
     {
-        
-        return view("clients.create") ;
 
+        return view("clients.create");
     }
 
     /**
@@ -33,31 +32,30 @@ class AdminClientsController extends Controller
      */
     public function store(Request $request)
     {
-        
+
         $request->validate([
 
-            "client_name" => "required" ,
+            "client_name" => "required",
             "client_logo" => "required"
 
-        ]) ;
+        ]);
 
-        $file = $request->file("client_logo") ;
+        $file = $request->file("client_logo");
 
-        $name = time() . $file->getClientOriginalName() ;
+        $name = time() . $file->getClientOriginalName();
 
-        $file->move("client_uploads" , $name) ;
+        $file->move("client_uploads", $name);
 
-        $request->client_logo = $name ;
+        $request->client_logo = $name;
 
-        \App\Models\Client::create([
+        Client::create([
 
-            "client_name" => $request->client_name ,
+            "client_name" => $request->client_name,
             "client_logo" => $request->client_logo
-            
-        ]) ;
 
-        return redirect("/admin/clients") ;
+        ]);
 
+        return redirect("/admin/clients");
     }
 
     /**
@@ -73,11 +71,10 @@ class AdminClientsController extends Controller
      */
     public function edit(string $id)
     {
-        
-        $client = \App\Models\Client::findOrFail($id) ;
 
-        return view("clients.edit" , compact("client")) ;
+        $client = Client::findOrFail($id);
 
+        return view("clients.edit", compact("client"));
     }
 
     /**
@@ -85,32 +82,31 @@ class AdminClientsController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        
+
         $request->validate([
 
-            "client_name" => "required" ,
+            "client_name" => "required",
             "client_logo" => "required"
 
-        ]) ;
+        ]);
 
-        $file = $request->file("client_logo") ;
+        $file = $request->file("client_logo");
 
-        $name = time() . $file->getClientOriginalName() ;
+        $name = time() . $file->getClientOriginalName();
 
-        $file->move("client_uploads" , $name) ;
+        $file->move("client_uploads", $name);
 
-        $request->client_logo = $name ;
+        $request->client_logo = $name;
 
-        $client = \App\Models\Client::findOrFail($id) ;
+        $client = Client::findOrFail($id);
 
-        $client->client_name = $request->client_name ;
+        $client->client_name = $request->client_name;
 
-        $client->client_logo = $request->client_logo ;
+        $client->client_logo = $request->client_logo;
 
-        $client->save() ;
+        $client->save();
 
-        return redirect("/admin/clients") ;
-
+        return redirect("/admin/clients");
     }
 
     /**
@@ -118,6 +114,8 @@ class AdminClientsController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $client = Client::findOrFail($id);
+        $client->delete();
+        return redirect("/admin/clients")->with('success', 'client deleted successfully');
     }
 }

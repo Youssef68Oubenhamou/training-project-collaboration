@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
 
 class LoginController extends Controller
 {
@@ -14,26 +13,11 @@ class LoginController extends Controller
     }
     public function handle(Request $request)
     {
-        // $credentials = $request->validate([
-        //     'email' => ['required', 'email'],
-        //     'password' => ['required', 'min:3'],
-        // ]);
+        $credentials = $request->validate([
+            'email' => ['required', 'email'],
+            'password' => ['required', 'min:3'],
+        ]);
 
-        $request->validate([
-
-            "email" => ["required" , "email"] ,
-            "password" => ["required" , "min:3"]
-
-        ]) ;
-
-        $credentials = [
-            
-            "email" => $request->email ,
-            "password" => $request->password
-
-        ] ;
-
-        // dd(Hash::make($request->password));
 
         $success = Auth::attempt($credentials);
         if ($success) {

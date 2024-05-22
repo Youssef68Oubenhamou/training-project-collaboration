@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     $clients = Client::all();
-    return view('pages/home' , compact("clients"));
+    return view('pages/home', compact("clients"));
 })->name('home');
 
 Route::get('login', [LoginController::class, 'login'])
@@ -32,49 +32,43 @@ Route::get("/user/contact", [UserContactController::class, "show"])->name("conta
 Route::post("/user/contact/submit", [UserContactController::class, "submit"])->name("contact.submit");
 
 Route::group(['prefix' => 'about-us'], function () {
-    
+
     Route::get('/our-expertise', function () {
 
         $expertises = Expertise::all();
         $clients = Client::all();
-        return view("pages.about-us.1_ourExpertise", compact("expertises" , "clients"));
-    
+        return view("pages.about-us.1_ourExpertise", compact("expertises", "clients"));
     })->name('1_aboutLink');
 
     Route::get('/values-and-philosophy', function () {
 
         $clients = Client::all();
-        return view('pages/about-us/2_valuesAndPhilosophy' , compact("clients"));
-    
+        return view('pages/about-us/2_valuesAndPhilosophy', compact("clients"));
     })->name('2_aboutLink');
 
     Route::get('/our-assets', function () {
 
         $clients = Client::all();
-        return view('pages/about-us/3_ourAssets' , compact("clients"));
-    
+        return view('pages/about-us/3_ourAssets', compact("clients"));
     })->name('3_aboutLink');
 
     Route::get('/technical-means', function () {
-        
-        $clients = Client::all();
-        return view('pages/about-us/4_technicalMeans' , compact("clients"));
-    
-    })->name('4_aboutLink');
 
+        $clients = Client::all();
+        return view('pages/about-us/4_technicalMeans', compact("clients"));
+    })->name('4_aboutLink');
 });
 
-
-Route::group(['prefix' => 'admin' , "middleware" => "auth"], function () {
+// , "middleware" => "auth"
+Route::group(['prefix' => 'admin'], function () {
 
     Route::resource('/works', AdminWorksController::class);
 
     Route::resource('/categories', AdminCategoriesController::class);
-    
-    Route::resource('/expertises', AdminExpertiseController::class);
-    
-    Route::resource('/contacts', AdminContactController::class);
-    
-    Route::resource('/clients', AdminClientsController::class);
 
+    Route::resource('/expertises', AdminExpertiseController::class);
+
+    Route::resource('/contacts', AdminContactController::class);
+
+    Route::resource('/clients', AdminClientsController::class);
 });

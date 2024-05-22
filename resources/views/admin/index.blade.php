@@ -7,6 +7,11 @@
 <!--====== portfolio ONE PART START ======-->
 <section class="portfolio-area portfolio-one">
    <div class="container">
+      @if (session()->has('success'))
+      <div class="alert alert-success text-center my-4">
+          {{session()->get('success')}}
+      </div>
+      @endif
       <div class="row">
          <div class="col-lg-12">
             <div class="portfolio-menu">

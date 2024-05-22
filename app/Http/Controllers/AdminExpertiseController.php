@@ -88,7 +88,7 @@ class AdminExpertiseController extends Controller
 
         $expertise->save();
 
-        return redirect("/admin/works");
+        return redirect("/admin/expertises")->with('success', 'expertise informations updated successfully');
     }
 
     /**
@@ -96,6 +96,8 @@ class AdminExpertiseController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $expertise = Expertise::findOrFail($id);
+        $expertise->delete();
+        return redirect("/admin/expertises")->with('success', 'expertise informations deleted successfully');
     }
 }

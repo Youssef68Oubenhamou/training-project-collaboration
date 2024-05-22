@@ -54,7 +54,7 @@ class AdminWorksController extends Controller
             "brand_name" => $request->brand_name,
             "brand_description" => $request->brand_description
         ]);
-        return redirect("/admin/works");
+        return redirect("/admin/works")->with('success', 'this work created successfully');
     }
 
     /**
@@ -123,6 +123,6 @@ class AdminWorksController extends Controller
 
         $work->delete();
 
-        return redirect("/admin/works");
+        return redirect("/admin/works")->with('success', 'this work deleted successfully');
     }
 }
