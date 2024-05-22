@@ -4,13 +4,23 @@
 
         @csrf
 
-        <div data-mdb-input-init class="form-outline mb-4">
-            <input type="text" name="creation_infos" id="form1Example1" class="form-control" />
-            <label class="form-label" for="form1Example1">Creation infos</label>
+        <div class="mb-4">
+            <div data-mdb-input-init class="form-outline">
+                <input type="text" name="creation_infos" id="form1Example1" value="{{old('creation_infos')}}" class="form-control  @error('creation_infos') is-invalid @enderror" />
+                <label class="form-label" for="form1Example1">Creation infos</label>
+            </div>
+            @error('creation_infos')
+                <small class="text-danger">{{$message}}</small>
+            @enderror
         </div>
-        <div data-mdb-input-init class="form-outline mb-4">
-            <input type="text" name="description_infos" id="form1Example1" class="form-control" />
-            <label class="form-label" for="form1Example1">Description infos</label>
+        <div class="mb-4">
+            <div data-mdb-input-init class="form-outline">
+                <input type="text" name="description_infos" id="form1Example1" value="{{old('description_infos')}}" class="form-control @error('description_infos') is-invalid @enderror" />
+                <label class="form-label" for="form1Example1">Description infos</label>
+            </div>
+            @error('description_infos')
+                <small class="text-danger">{{$message}}</small>
+            @enderror
         </div>
         <button data-mdb-ripple-init type="submit" class="btn add btn-block">Create</button>
 
