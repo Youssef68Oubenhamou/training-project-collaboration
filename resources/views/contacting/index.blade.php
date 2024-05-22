@@ -19,7 +19,7 @@
                 <th>Fix.2</th>
                 <th>Fix.3</th>
                 <th>Fax</th>
-                <th>Update</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
