@@ -60,7 +60,7 @@ Route::group(['prefix' => 'about-us'], function () {
 });
 
 // , "middleware" => "auth"
-Route::group(['prefix' => 'admin'], function () {
+Route::group(['prefix' => 'admin' , "middleware" => "auth"], function () {
 
     Route::resource('/works', AdminWorksController::class);
 
