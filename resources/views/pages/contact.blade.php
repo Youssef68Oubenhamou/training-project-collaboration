@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="{{asset('css/pages/contact.css')}}" />
-<x-app>
+<x-app :clients="$clients">
 <!--====== CONTACT ONE PART START ======-->
 <section class="contact-area">
    <div class="container">

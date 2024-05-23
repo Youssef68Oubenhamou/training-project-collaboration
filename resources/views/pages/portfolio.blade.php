@@ -1,7 +1,8 @@
+@props(['clients'])
 <!--====== gLightBox CSS ======-->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox@3.1.0/dist/css/glightbox.min.css" />
 <link rel="stylesheet" href="{{asset('css/pages/portfolio.css')}}" />
-<x-app>
+<x-app :clients="$clients">
 <!--====== portfolio ONE PART START ======-->
 <section class="portfolio-area portfolio-one">
    <div class="container">

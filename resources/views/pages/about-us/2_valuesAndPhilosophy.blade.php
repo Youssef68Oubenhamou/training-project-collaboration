@@ -1,4 +1,4 @@
-<x-app>
+<x-app :clients="$clients">
     <section>
         <div class="container">
             <div class="d-flex justify-content-center align-items-center py-5" style="flex-direction: column">

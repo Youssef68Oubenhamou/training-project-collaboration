@@ -1,4 +1,4 @@
-<x-app>
+<x-app :clients="$clients">
     <style>
         .list-of-technical>.col-sm>ul>li{
             list-style-type: square;

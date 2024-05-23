@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="s{{asset('css/pages/about-us/1_ourExpertise.css')}}">
-<x-app>
+<x-app :clients="$clients">
     <!--====== CALL TO ACTION ONE PART START ======-->
    <section class="call-action-area call-action-one">
       <div class="container">
