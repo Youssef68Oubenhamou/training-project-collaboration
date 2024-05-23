@@ -141,6 +141,8 @@
                 <ul class="dropdown-menu ml-4" aria-labelledby="dropdownMenuButton">
                   <li><a class="dropdown-item" href="/admin/expertises/">Expertise</a></li>
                   <li><a class="dropdown-item" href="/admin/expertises/create">Setup Expertise</a></li>
+                  <li><a class="dropdown-item" href="{{route('our-assets.index')}}">Our assets</a></li>
+                  <li><a class="dropdown-item" href="{{route('our-assets.create')}}">Setup assets</a></li>
                 </ul>
               </div>
           </li>

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminAssetController;
 use App\Http\Controllers\AdminCategoriesController;
 use App\Http\Controllers\AdminClientsController;
 use App\Http\Controllers\AdminContactController;
@@ -8,6 +9,7 @@ use App\Http\Controllers\AdminWorksController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\pagesController;
 use App\Http\Controllers\UserContactController;
+use App\Models\Asset;
 use App\Models\Expertise;
 use App\Models\Client;
 use App\Models\Contact;
@@ -55,7 +57,8 @@ Route::group(['prefix' => 'about-us'], function () {
 
         $clients = Client::all();
         $contacts = Contact::all();
-        return view('pages/about-us/3_ourAssets', compact("clients", 'contacts'));
+        $assets = Asset::all();
+        return view('pages/about-us/3_ourAssets', compact("clients", 'contacts', 'assets'));
     })->name('3_aboutLink');
 
     Route::get('/technical-means', function () {
@@ -74,6 +77,7 @@ Route::group(['prefix' => 'admin', "middleware" => "auth"], function () {
     Route::resource('/categories', AdminCategoriesController::class);
 
     Route::resource('/expertises', AdminExpertiseController::class);
+    Route::resource('/our-assets', AdminAssetController::class);
 
     Route::resource('/contacts', AdminContactController::class);
 
