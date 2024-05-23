@@ -1,4 +1,4 @@
-@props(['clients'])
+@props(['clients','contacts'])
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -116,10 +116,10 @@
                     <div class="footer-link">
                     <h6 class="footer-title">Company</h6>
                     <ul>
-                        <li><a href="javascript:void(0)">Home</a></li>
-                        <li><a href="javascript:void(0)">About us</a></li>
-                        <li><a href="javascript:void(0)">Portfolio</a></li>
-                        <li><a href="javascript:void(0)">Contact</a></li>
+                        <li><a href="{{route('home')}}">Home</a></li>
+                        <li><a href="{{route('1_aboutLink')}}">About us</a></li>
+                        <li><a href="{{route('portfolio')}}">Portfolio</a></li>
+                        <li><a href="{{route('contact.show')}}">Contact</a></li>
                     </ul>
                     </div>
                     <!-- footer link -->
@@ -129,13 +129,32 @@
                     <div class="footer-contact">
                     <h6 class="footer-title">Help & Suuport</h6>
                     <ul>
-                        <li>
-                            <i class="lni lni-map-marker"></i> 
-                            Zone Industrielle de Had Soualem, Casablanca, Morocco
-                        </li>
-                        <li><i class="lni lni-phone-set"></i> (+212) 522 29 04 63</li>
-                        <li><i class="lni lni-phone-set"></i> (+212) 522 29 05 63</li>
-                        <li><i class="lni lni-envelope"></i> scontact@conceptplv.com</li>
+                        @if (count($contacts)==0)
+                            <li><i class="lni lni-map-marker"></i>-</li>
+                            <li><i class="lni lni-phone-set"></i>-</li>
+                            <li><i class="lni lni-phone-set"></i>-</li>
+                            <li><i class="lni lni-envelope"></i>-</li>
+                        @else
+                            @foreach($contacts as $contact)
+                            <li>
+                                <i class="lni lni-map-marker"></i> 
+                                {{ $contact->address }}
+                                {{-- Zone Industrielle de Had Soualem, Casablanca, Morocco --}}
+                            </li>
+                            <li><i class="lni lni-phone-set"></i> 
+                                {{ $contact->mobile }}
+                                {{-- (+212) 522 29 04 63 --}}
+                            </li>
+                            <li><i class="lni lni-phone-set"></i> 
+                                {{ $contact->fix_1 }}
+                                {{-- (+212) 522 29 05 63 --}}
+                            </li>
+                            <li><i class="lni lni-envelope"></i> 
+                                {{ $contact->email }}
+                                {{-- scontact@conceptplv.com --}}
+                            </li>
+                            @endforeach
+                        @endif
                     </ul>
                     </div>
                     <!-- End Footer Contact -->

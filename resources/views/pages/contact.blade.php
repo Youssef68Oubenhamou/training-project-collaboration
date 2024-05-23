@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="{{asset('css/pages/contact.css')}}" />
-<x-app :clients="$clients">
+<x-app :clients="$clients" :contacts='$contacts'>
 <!--====== CONTACT ONE PART START ======-->
 <section class="contact-area">
    <div class="container">
@@ -103,12 +103,21 @@
              </div>
              <div class="contact-info">
                 <ul class="info">
-                  @foreach($contacts as $contact)
-                   <li>
-                      <div class="single-info">
-                         <div class="info-icon">
-                            <i class="lni lni-map-marker"></i>
-                         </div>
+                  @if (count($contacts)==0)
+                     <li><i class="lni lni-map-marker"></i>-</li>
+                     <li><i class="lni lni-envelope"></i>-</li>
+                     <li><i class="lni lni-phone"></i>-</li>
+                     <li><i class="lni lni-phone-set"></i>-</li>
+                     <li><i class="lni lni-phone-set"></i>-</li>
+                     <li><i class="lni lni-phone-set"></i>-</li>
+                     <li><i class="lni lni-phone-set"></i>-</li>
+                  @else
+                     @foreach($contacts as $contact)
+                     <li>
+                        <div class="single-info">
+                           <div class="info-icon">
+                              <i class="lni lni-map-marker"></i>
+                           </div>
                         <div class="info-content">
 
                            <p class="text">
@@ -117,10 +126,10 @@
                            </p>
 
                         </div>
-                      </div>
-                      <!-- single info -->
-                   </li>
-                   <li>
+                        </div>
+                        <!-- single info -->
+                     </li>
+                     <li>
                      <div class="single-info">
                         <div class="info-icon">
                            <i class="lni lni-envelope"></i>
@@ -135,83 +144,84 @@
                      </div>
                      <!-- single info -->
                   </li>
-                   <li>
-                      <div class="single-info">
-                         <div class="info-icon">
-                            <i class="lni lni-phone"></i>
-                         </div>
-                         <div class="info-content">
+                     <li>
+                        <div class="single-info">
+                           <div class="info-icon">
+                              <i class="lni lni-phone"></i>
+                           </div>
+                           <div class="info-content">
 
                               <p class="text">
                                  {{ $contact->phone }}
                               </p>
 
-                         </div>
-                      </div>
-                      <!-- single info -->
-                   </li>
-                   <li>
-                      <div class="single-info">
-                         <div class="info-icon">
-                            <i class="lni lni-phone-set"></i>
-                         </div>
-                         <div class="info-content">
+                           </div>
+                        </div>
+                        <!-- single info -->
+                     </li>
+                     <li>
+                        <div class="single-info">
+                           <div class="info-icon">
+                              <i class="lni lni-phone-set"></i>
+                           </div>
+                           <div class="info-content">
 
                               <p class="text">
                                  {{ $contact->fix_1 }}
                               </p>
 
-                         </div>
-                      </div>
-                      <!-- single info -->
-                   </li>
-                   <li>
-                      <div class="single-info">
-                         <div class="info-icon">
-                            <i class="lni lni-phone-set"></i>
-                         </div>
-                         <div class="info-content">
+                           </div>
+                        </div>
+                        <!-- single info -->
+                     </li>
+                     <li>
+                        <div class="single-info">
+                           <div class="info-icon">
+                              <i class="lni lni-phone-set"></i>
+                           </div>
+                           <div class="info-content">
 
                               <p class="text">
                                  {{ $contact->fix_2 }}
                               </p>
 
-                         </div>
-                      </div>
-                      <!-- single info -->
-                   </li>
-                   <li>
-                      <div class="single-info">
-                         <div class="info-icon">
-                            <i class="lni lni-phone-set"></i>
-                         </div>
-                         <div class="info-content">
+                           </div>
+                        </div>
+                        <!-- single info -->
+                     </li>
+                     <li>
+                        <div class="single-info">
+                           <div class="info-icon">
+                              <i class="lni lni-phone-set"></i>
+                           </div>
+                           <div class="info-content">
 
                               <p class="text">
                                  {{ $contact->fix_3 }}
                               </p>
 
-                         </div>
-                      </div>
-                      <!-- single info -->
-                   </li>
-                   <li>
-                      <div class="single-info">
-                         <div class="info-icon">
-                            <i class="lni lni-phone-set"></i>
-                         </div>
-                         <div class="info-content">
+                           </div>
+                        </div>
+                        <!-- single info -->
+                     </li>
+                     <li>
+                        <div class="single-info">
+                           <div class="info-icon">
+                              <i class="lni lni-phone-set"></i>
+                           </div>
+                           <div class="info-content">
 
                               <p class="text">
                                  {{ $contact->fax }}
                               </p>
 
-                         </div>
-                      </div>
-                      <!-- single info -->
-                   </li>
-                </ul>
-                @endforeach
+                           </div>
+                        </div>
+                        <!-- single info -->
+                     </li>
+                  </ul>
+                  @endforeach
+               @endif
                 <ul class="social mt-5">
                    <li>
                       <a href="https://www.facebook.com/conceptplv" target="_blank" class="d-flex align-items-center justify-content-center">

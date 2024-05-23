@@ -10,11 +10,14 @@ use App\Http\Controllers\pagesController;
 use App\Http\Controllers\UserContactController;
 use App\Models\Expertise;
 use App\Models\Client;
+use App\Models\Contact;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     $clients = Client::all();
-    return view('pages/home', compact("clients"));
+    $contacts = Contact::all();
+
+    return view('pages/home', compact("clients", "contacts"));
 })->name('home');
 
 Route::get('login', [LoginController::class, 'login'])
@@ -37,25 +40,29 @@ Route::group(['prefix' => 'about-us'], function () {
 
         $expertises = Expertise::all();
         $clients = Client::all();
-        return view("pages.about-us.1_ourExpertise", compact("expertises", "clients"));
+        $contacts = Contact::all();
+        return view("pages.about-us.1_ourExpertise", compact("expertises", "clients", 'contacts'));
     })->name('1_aboutLink');
 
     Route::get('/values-and-philosophy', function () {
 
         $clients = Client::all();
-        return view('pages/about-us/2_valuesAndPhilosophy', compact("clients"));
+        $contacts = Contact::all();
+        return view('pages/about-us/2_valuesAndPhilosophy', compact("clients", 'contacts'));
     })->name('2_aboutLink');
 
     Route::get('/our-assets', function () {
 
         $clients = Client::all();
-        return view('pages/about-us/3_ourAssets', compact("clients"));
+        $contacts = Contact::all();
+        return view('pages/about-us/3_ourAssets', compact("clients", 'contacts'));
     })->name('3_aboutLink');
 
     Route::get('/technical-means', function () {
 
         $clients = Client::all();
-        return view('pages/about-us/4_technicalMeans', compact("clients"));
+        $contacts = Contact::all();
+        return view('pages/about-us/4_technicalMeans', compact("clients", 'contacts'));
     })->name('4_aboutLink');
 });
 

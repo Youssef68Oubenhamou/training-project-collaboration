@@ -1,4 +1,4 @@
-<x-app :clients="$clients">
+<x-app :clients="$clients" :contacts='$contacts'>
     <style>
         .list-of-technical>.col-sm>ul>li{
             list-style-type: square;
