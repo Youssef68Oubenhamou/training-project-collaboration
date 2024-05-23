@@ -35,20 +35,24 @@
                   <h5 class="card-title text-center mb-5 fw-light fs-5">Sign In</h5>
                   <form method="POST" action="{{route('handle')}}">
                     @csrf
-                    <div class="form-floating mb-3">
-                      <input type="email" class="form-control" id="floatingInput" name="email" placeholder="name@example.com">
-                      <label for="floatingInput">Email address</label>
+                    <div class="mb-3">
+                      <div class="form-floating">
+                        <input type="email" class="form-control @error('email') is-invalid @enderror" id="floatingInput" name="email" placeholder="name@example.com">
+                        <label for="floatingInput">Email address</label>
+                      </div>
+                      @error('email')
+                          <small class="text-danger">{{$message}}</small>
+                      @enderror
                     </div>
-                    @error('email')
-                        <small class="text-danger">{{$message}}</small>
-                    @enderror
-                    <div class="form-floating mb-3">
-                      <input type="password" class="form-control" id="floatingPassword" name="password" placeholder="Password">
-                      <label for="floatingPassword">Password</label>
+                    <div class="mb-3">
+                      <div class="form-floating">
+                        <input type="password" class="form-control @error('password') is-invalid @enderror" id="floatingPassword" name="password" placeholder="Password">
+                        <label for="floatingPassword">Password</label>
+                      </div>
+                      @error('password')
+                          <small class="text-danger">{{$message}}</small>
+                      @enderror
                     </div>
-                    @error('password')
-                        <small class="text-danger">{{$message}}</small>
-                    @enderror
                     <div class="d-grid">
                       <button class="btn btn-login text-uppercase fw-bold" type="submit">Sign in</button>
                     </div>

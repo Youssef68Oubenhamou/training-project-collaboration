@@ -59,8 +59,8 @@ Route::group(['prefix' => 'about-us'], function () {
     })->name('4_aboutLink');
 });
 
-// , "middleware" => "auth"
-Route::group(['prefix' => 'admin' , "middleware" => "auth"], function () {
+
+Route::group(['prefix' => 'admin', "middleware" => "auth"], function () {
 
     Route::resource('/works', AdminWorksController::class);
 
