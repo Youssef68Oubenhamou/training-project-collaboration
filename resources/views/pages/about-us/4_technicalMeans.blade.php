@@ -52,17 +52,38 @@
                   <div class="w-75 text-center d-flex justify-content-center align-items-center mt-5" style="flex-direction: column">
                     <div class="d-flex justify-content-center align-items-center flex-wrap gap-4 w-100">
                         <div class="card w-25" style="width: 280px !important;border: none;">
-                            <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/184.webp" class="card-img-top" alt="Fissure in Sandstone"/>
+                            <img src="{{asset('imgs/machine_1.jpg')}}" class="card-img-top" alt="Fissure in Sandstone"/>
                             <div class="card-body">
                                 <b style="color: #214b82 !important;" class="card-title">PLASMA METAL CUTTING</b>
                                 <p class="card-text mt-2">Sheet metal, aluminum sheets, black plates</p>
                             </div>
                         </div>
                         <div class="card w-25" style="width: 280px !important;border: none;">
-                            <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/184.webp" class="card-img-top" alt="Fissure in Sandstone"/>
+                            <img src="{{asset('imgs/machine_2.jpg')}}" class="card-img-top" alt="Fissure in Sandstone"/>
                             <div class="card-body">
                                 <b style="color: #214b82 !important;" class="card-title">LASER</b>
-                                <p class="card-text mt-2">plexiglass, PET, PVC, PS and wood cutting and engraving</p>
+                                <p class="card-text mt-2">Plexiglass, PET, PVC, PS and wood cutting and engraving</p>
+                            </div>
+                        </div>
+                        <div class="card w-25" style="width: 280px !important;border: none;">
+                            <img src="{{asset('imgs/machine_3.jpg')}}" class="card-img-top" alt="Fissure in Sandstone"/>
+                            <div class="card-body">
+                                <b style="color: #214b82 !important;" class="card-title">CNC</b>
+                                <p class="card-text mt-2">Wood cutting, Forex, Aluminum and Alucobond</p>
+                            </div>
+                        </div>
+                        <div class="card w-25" style="width: 280px !important;border: none;">
+                            <img src="{{asset('imgs/machine_4.jpg')}}" class="card-img-top" alt="Fissure in Sandstone"/>
+                            <div class="card-body">
+                                <b style="color: #214b82 !important;" class="card-title">PRINTING MACHINE</b>
+                                <p class="card-text mt-2">Vinyl printing, tarpaulin, PVC</p>
+                            </div>
+                        </div>
+                        <div class="card w-25" style="width: 280px !important;border: none;">
+                            <img src="{{asset('imgs/machine_5.jpg')}}" class="card-img-top" alt="Fissure in Sandstone"/>
+                            <div class="card-body">
+                                <b style="color: #214b82 !important;" class="card-title">THEROFORMING MACHINE</b>
+                                <p class="card-text mt-2">PS, PET, PVC, PMMA</p>
                             </div>
                         </div>
                     </div>
