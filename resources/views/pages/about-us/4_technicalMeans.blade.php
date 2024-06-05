@@ -50,6 +50,9 @@
                       </div>
                   </div>
                   <div class="w-75 text-center d-flex justify-content-center align-items-center mt-5" style="flex-direction: column">
+                    <h2 class="action-title pb-4 font-weight-bold text-center">
+                        OUR MACHINERY
+                     </h2>
                     <div class="d-flex justify-content-center align-items-center flex-wrap gap-4 w-100">
                         <div class="card w-25" style="width: 280px !important;border: none;">
                             <img src="{{asset('imgs/machine_1.jpg')}}" class="card-img-top" alt="Fissure in Sandstone"/>
