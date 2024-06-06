@@ -40,7 +40,7 @@
                      alt="image"
                      />
                </div>
-               <div class="portfolio-overlay d-flex align-items-center">
+               <div class="portfolio-overlay d-flex align-items-center justify-content-center">
                   <div class="portfolio-content">
                      <div class="portfolio-icon">
                         <a

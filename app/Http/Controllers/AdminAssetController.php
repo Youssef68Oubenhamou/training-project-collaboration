@@ -21,7 +21,9 @@ class AdminAssetController extends Controller
      */
     public function create()
     {
-        return view('admin.assets.create');
+
+        $assets = Asset::all();
+        return view('admin.assets.create', compact('assets'));
     }
 
     /**
