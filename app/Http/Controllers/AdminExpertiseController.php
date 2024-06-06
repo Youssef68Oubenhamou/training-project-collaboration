@@ -24,7 +24,9 @@ class AdminExpertiseController extends Controller
     public function create()
     {
 
-        return view("expertise.create");
+        $expertises = Expertise::all();
+
+        return view("expertise.create", compact('expertises'));
     }
 
     /**
@@ -45,7 +47,7 @@ class AdminExpertiseController extends Controller
             "description_infos" => $request->description_infos
         ]);
 
-        return redirect("/admin/works");
+        return redirect("/admin/expertises");
     }
 
     /**

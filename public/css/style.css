@@ -1,7 +1,9 @@
 :root {
     --primary: #009ee0 !important;
 }
-
+.not-found-btn {
+    background-color: var(--primary) !important;
+}
 .app {
     width: 100%;
 }

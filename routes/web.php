@@ -83,3 +83,8 @@ Route::group(['prefix' => 'admin', "middleware" => "auth"], function () {
 
     Route::resource('/clients', AdminClientsController::class);
 });
+
+
+Route::fallback(function () {
+    return view('not-found');
+});
