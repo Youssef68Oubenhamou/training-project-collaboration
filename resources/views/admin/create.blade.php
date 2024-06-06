@@ -14,7 +14,7 @@
        <div class="mt-4">
             <div data-mdb-input-init class="form-outline">
                 <input type="text" name="brand_description" id="form1Example1" value="{{old('brand_description')}}" class="form-control @error('brand_description') is-invalid @enderror" />
-                <label class="form-label" for="form1Example1">Brand Sescription</label>
+                <label class="form-label" for="form1Example1">Brand Description</label>
                 
             </div>
             @error('brand_description')
