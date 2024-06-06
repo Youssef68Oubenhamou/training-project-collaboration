@@ -24,7 +24,8 @@ class AdminContactController extends Controller
     public function create()
     {
 
-        return view("contacting.create");
+        $contacts = Contact::all();
+        return view("contacting.create", compact("contacts"));
     }
 
     /**

@@ -26,7 +26,7 @@
       <!-- row -->
       <div class="row grid">
          @foreach($works as $work)
-         <div class="col-lg-4 col-sm-6" data-filter="{{$work->categorie->categorie_name}}">
+         <div class="col-lg-4 col-sm-6" data-filter="{{$work->categorie == null? '':$work->categorie->categorie_name}}">
             <div class="portfolio-style-one text-center">
                <div class="portfolio-image">
                   <img
